@@ -2,6 +2,7 @@
 
 use App\Services\ThemeService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +55,77 @@ Route::get('/' . config('v2board.secure_path', config('v2board.frontend_admin_pa
 if (!empty(config('v2board.subscribe_path'))) {
     Route::get(config('v2board.subscribe_path'), 'V1\\Client\\ClientController@subscribe')->middleware('client');
 }
+
+// Fallback static asset handler for environments where the web server does not serve /public files directly.
+// If Nginx/Apache is correctly configured, this route will simply never be hit.
+Route::get('/theme/{theme}/assets/{path}', function (string $theme, string $path) {
+    if (str_contains($path, '..')) {
+        abort(404);
+    }
+
+    $fullPath = public_path("theme/{$theme}/assets/{$path}");
+    if (!is_file($fullPath)) {
+        abort(404);
+    }
+
+    $mime = null;
+    $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
+    if ($ext === 'js' || $ext === 'mjs') $mime = 'application/javascript; charset=utf-8';
+    if ($ext === 'css') $mime = 'text/css; charset=utf-8';
+    if ($ext === 'json') $mime = 'application/json; charset=utf-8';
+    if ($ext === 'svg') $mime = 'image/svg+xml';
+    if ($ext === 'png') $mime = 'image/png';
+    if ($ext === 'jpg' || $ext === 'jpeg') $mime = 'image/jpeg';
+    if ($ext === 'gif') $mime = 'image/gif';
+    if ($ext === 'webp') $mime = 'image/webp';
+    if ($ext === 'woff2') $mime = 'font/woff2';
+    if ($ext === 'woff') $mime = 'font/woff';
+    if ($ext === 'ttf') $mime = 'font/ttf';
+    if ($ext === 'eot') $mime = 'application/vnd.ms-fontobject';
+
+    if (!$mime) {
+        $mime = File::mimeType($fullPath) ?: 'application/octet-stream';
+    }
+
+    return response()->file($fullPath, [
+        'Content-Type' => $mime,
+        'Cache-Control' => 'no-cache',
+    ]);
+})->where('path', '.*');
+
+// JS-first asset route that bypasses static file serving rules in some web servers.
+// Use this when .js files under /public are served with an incorrect Content-Type (often blocked by nosniff).
+Route::get('/theme-asset/{theme}/{path}', function (string $theme, string $path) {
+    if (str_contains($path, '..')) {
+        abort(404);
+    }
+
+    $fullPath = public_path("theme/{$theme}/assets/{$path}");
+    if (!is_file($fullPath)) {
+        abort(404);
+    }
+
+    $mime = null;
+    $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
+    if ($ext === 'js' || $ext === 'mjs') $mime = 'application/javascript; charset=utf-8';
+    if ($ext === 'css') $mime = 'text/css; charset=utf-8';
+    if ($ext === 'json') $mime = 'application/json; charset=utf-8';
+    if ($ext === 'svg') $mime = 'image/svg+xml';
+    if ($ext === 'png') $mime = 'image/png';
+    if ($ext === 'jpg' || $ext === 'jpeg') $mime = 'image/jpeg';
+    if ($ext === 'gif') $mime = 'image/gif';
+    if ($ext === 'webp') $mime = 'image/webp';
+    if ($ext === 'woff2') $mime = 'font/woff2';
+    if ($ext === 'woff') $mime = 'font/woff';
+    if ($ext === 'ttf') $mime = 'font/ttf';
+    if ($ext === 'eot') $mime = 'application/vnd.ms-fontobject';
+
+    if (!$mime) {
+        $mime = File::mimeType($fullPath) ?: 'application/octet-stream';
+    }
+
+    return response()->file($fullPath, [
+        'Content-Type' => $mime,
+        'Cache-Control' => 'no-cache',
+    ]);
+})->where('path', '.*');

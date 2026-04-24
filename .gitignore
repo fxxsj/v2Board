@@ -1,4 +1,10 @@
 /node_modules
+**/node_modules/
+**/node_modules
+frontend/node_modules
+**/dist/
+**/build/
+**/*.tsbuildinfo
 /config/v2board.php
 /public/hot
 /public/storage
@@ -24,3 +30,4 @@ docker-compose.yml
 public/clients/*
 workerman.webman.php.pid
 workerman.log
+storage/doc-api-creds.txt

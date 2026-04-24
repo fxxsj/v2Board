@@ -1,0 +1,30 @@
+{
+  "path": "/api/v1/{secure_path}/plan/sort",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "排序（plan）",
+  "params": [
+    {
+      "name": "plan_ids",
+      "type": "array",
+      "required": true,
+      "rules": [
+        "required",
+        "array"
+      ],
+      "source": "FormRequest"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

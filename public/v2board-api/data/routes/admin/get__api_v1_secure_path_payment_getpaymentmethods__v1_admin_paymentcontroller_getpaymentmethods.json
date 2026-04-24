@@ -1,0 +1,23 @@
+{
+  "path": "/api/v1/{secure_path}/payment/getPaymentMethods",
+  "method": "GET",
+  "auth": "admin(auth_data)",
+  "description": "获取数据（payment）",
+  "params": [],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": [\n        \"AlipayF2F\",\n        \"BEasyPaymentUSDT\",\n        \"BTCPay\",\n        \"CoinPayments\",\n        \"Coinbase\",\n        \"EPay\",\n        \"MGate\",\n        \"StripeALL\",\n        \"StripeAlipay\",\n        \"StripeCheckout\",\n        \"StripeCredit\",\n        \"StripeWepay\",\n        \"WechatPayNative\"\n    ]\n}"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "path": "/api/v1/{secure_path}/user/ban",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "封禁（user）",
+  "params": [
+    {
+      "name": "sort_type",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "sort",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

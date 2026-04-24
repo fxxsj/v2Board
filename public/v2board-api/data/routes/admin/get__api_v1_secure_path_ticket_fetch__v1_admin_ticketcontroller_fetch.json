@@ -1,0 +1,78 @@
+{
+  "path": "/api/v1/{secure_path}/ticket/fetch",
+  "method": "GET",
+  "auth": "admin(auth_data)",
+  "description": "获取列表/数据（ticket）",
+  "params": [
+    {
+      "name": "id",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "current",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "pageSize",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "status",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "reply_status",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "email",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 2,\n            \"subject\": \"hello\",\n            \"level\": 1,\n            \"status\": 1,\n            \"reply_status\": 0,\n            \"created_at\": 1773829891,\n            \"updated_at\": 1773841391\n        }\n    ],\n    \"total\": 1\n}"
+  }
+}

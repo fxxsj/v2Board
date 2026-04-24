@@ -1,0 +1,7 @@
+{
+  "path": "/api/v1/{secure_path}/notice/update",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "更新（notice）",
+  "params": []
+}

@@ -1,0 +1,1761 @@
+{
+  "mode": "per-route",
+  "total": 193,
+  "modules": [
+    "admin",
+    "client",
+    "guest",
+    "node-backend",
+    "passport",
+    "staff",
+    "user"
+  ],
+  "counts": {
+    "admin": 114,
+    "client": 2,
+    "guest": 4,
+    "node-backend": 14,
+    "passport": 8,
+    "staff": 12,
+    "user": 39
+  },
+  "routes": [
+    {
+      "path": "/api/v1/guest/comm/config",
+      "method": "GET",
+      "module": "guest",
+      "auth": "guest",
+      "description": "获取配置（guest）",
+      "action": "V1\\\\Guest\\\\CommController@config",
+      "file": "routes/guest/get__api_v1_guest_comm_config__v1_guest_commcontroller_config.json"
+    },
+    {
+      "path": "/api/v1/guest/telegram/webhook",
+      "method": "POST",
+      "module": "guest",
+      "auth": "guest",
+      "description": "guest 模块接口",
+      "action": "V1\\\\Guest\\\\TelegramController@webhook",
+      "file": "routes/guest/post__api_v1_guest_telegram_webhook__v1_guest_telegramcontroller_webhook.json"
+    },
+    {
+      "path": "/api/v1/guest/payment/notify/{method}/{uuid}",
+      "method": "GET",
+      "module": "guest",
+      "auth": "guest",
+      "description": "支付回调通知（guest）",
+      "action": "V1\\Guest\\PaymentController@notify",
+      "file": "routes/guest/get__api_v1_guest_payment_notify_method_uuid__v1_guest_paymentcontroller_notify.json"
+    },
+    {
+      "path": "/api/v1/guest/payment/notify/{method}/{uuid}",
+      "method": "POST",
+      "module": "guest",
+      "auth": "guest",
+      "description": "支付回调通知（guest）",
+      "action": "V1\\Guest\\PaymentController@notify",
+      "file": "routes/guest/post__api_v1_guest_payment_notify_method_uuid__v1_guest_paymentcontroller_notify.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/config/fetch",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取列表/数据（config）",
+      "action": "V1\\\\Admin\\\\ConfigController@fetch",
+      "file": "routes/admin/get__api_v1_secure_path_config_fetch__v1_admin_configcontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/config/getEmailTemplate",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取配置（config）",
+      "action": "V1\\\\Admin\\\\ConfigController@getEmailTemplate",
+      "file": "routes/admin/get__api_v1_secure_path_config_getemailtemplate__v1_admin_configcontroller_getemailtemplate.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/config/getThemeTemplate",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取配置（config）",
+      "action": "V1\\\\Admin\\\\ConfigController@getThemeTemplate",
+      "file": "routes/admin/get__api_v1_secure_path_config_getthemetemplate__v1_admin_configcontroller_getthemetemplate.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/config/save",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取配置（config）",
+      "action": "V1\\\\Admin\\\\ConfigController@save",
+      "file": "routes/admin/post__api_v1_secure_path_config_save__v1_admin_configcontroller_save.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/config/setTelegramWebhook",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取配置（config）",
+      "action": "V1\\\\Admin\\\\ConfigController@setTelegramWebhook",
+      "file": "routes/admin/post__api_v1_secure_path_config_settelegramwebhook__v1_admin_configcontroller_settelegramwebhook.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/config/testSendMail",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取配置（config）",
+      "action": "V1\\\\Admin\\\\ConfigController@testSendMail",
+      "file": "routes/admin/post__api_v1_secure_path_config_testsendmail__v1_admin_configcontroller_testsendmail.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/trojan/copy",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "copy 模块接口",
+      "action": "V1\\\\Admin\\\\Server\\\\TrojanController@copy",
+      "file": "routes/admin/post__api_v1_secure_path_copy__v1_admin_server_trojancontroller_copy.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/vmess/copy",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "copy 模块接口",
+      "action": "V1\\\\Admin\\\\Server\\\\VmessController@copy",
+      "file": "routes/admin/post__api_v1_secure_path_copy__v1_admin_server_vmesscontroller_copy.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/shadowsocks/copy",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "copy 模块接口",
+      "action": "V1\\\\Admin\\\\Server\\\\ShadowsocksController@copy",
+      "file": "routes/admin/post__api_v1_secure_path_copy__v1_admin_server_shadowsockscontroller_copy.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/tuic/copy",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "copy 模块接口",
+      "action": "V1\\\\Admin\\\\Server\\\\TuicController@copy",
+      "file": "routes/admin/post__api_v1_secure_path_copy__v1_admin_server_tuiccontroller_copy.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/hysteria/copy",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "copy 模块接口",
+      "action": "V1\\\\Admin\\\\Server\\\\HysteriaController@copy",
+      "file": "routes/admin/post__api_v1_secure_path_copy__v1_admin_server_hysteriacontroller_copy.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/vless/copy",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "copy 模块接口",
+      "action": "V1\\\\Admin\\\\Server\\\\VlessController@copy",
+      "file": "routes/admin/post__api_v1_secure_path_copy__v1_admin_server_vlesscontroller_copy.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/anytls/copy",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "copy 模块接口",
+      "action": "V1\\\\Admin\\\\Server\\\\AnyTLSController@copy",
+      "file": "routes/admin/post__api_v1_secure_path_copy__v1_admin_server_anytlscontroller_copy.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/v2node/copy",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "copy 模块接口",
+      "action": "V1\\\\Admin\\\\Server\\\\V2nodeController@copy",
+      "file": "routes/admin/post__api_v1_secure_path_copy__v1_admin_server_v2nodecontroller_copy.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/coupon/drop",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "删除/移除（coupon）",
+      "action": "V1\\\\Admin\\\\CouponController@drop",
+      "file": "routes/admin/post__api_v1_secure_path_coupon_drop__v1_admin_couponcontroller_drop.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/coupon/fetch",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取列表/数据（coupon）",
+      "action": "V1\\\\Admin\\\\CouponController@fetch",
+      "file": "routes/admin/get__api_v1_secure_path_coupon_fetch__v1_admin_couponcontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/coupon/generate",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "生成（coupon）",
+      "action": "V1\\\\Admin\\\\CouponController@generate",
+      "file": "routes/admin/post__api_v1_secure_path_coupon_generate__v1_admin_couponcontroller_generate.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/coupon/show",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "显示/启用（coupon）",
+      "action": "V1\\\\Admin\\\\CouponController@show",
+      "file": "routes/admin/post__api_v1_secure_path_coupon_show__v1_admin_couponcontroller_show.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/trojan/drop",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "删除/移除（drop）",
+      "action": "V1\\\\Admin\\\\Server\\\\TrojanController@drop",
+      "file": "routes/admin/post__api_v1_secure_path_drop__v1_admin_server_trojancontroller_drop.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/vmess/drop",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "删除/移除（drop）",
+      "action": "V1\\\\Admin\\\\Server\\\\VmessController@drop",
+      "file": "routes/admin/post__api_v1_secure_path_drop__v1_admin_server_vmesscontroller_drop.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/shadowsocks/drop",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "删除/移除（drop）",
+      "action": "V1\\\\Admin\\\\Server\\\\ShadowsocksController@drop",
+      "file": "routes/admin/post__api_v1_secure_path_drop__v1_admin_server_shadowsockscontroller_drop.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/tuic/drop",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "删除/移除（drop）",
+      "action": "V1\\\\Admin\\\\Server\\\\TuicController@drop",
+      "file": "routes/admin/post__api_v1_secure_path_drop__v1_admin_server_tuiccontroller_drop.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/hysteria/drop",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "删除/移除（drop）",
+      "action": "V1\\\\Admin\\\\Server\\\\HysteriaController@drop",
+      "file": "routes/admin/post__api_v1_secure_path_drop__v1_admin_server_hysteriacontroller_drop.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/vless/drop",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "删除/移除（drop）",
+      "action": "V1\\\\Admin\\\\Server\\\\VlessController@drop",
+      "file": "routes/admin/post__api_v1_secure_path_drop__v1_admin_server_vlesscontroller_drop.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/anytls/drop",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "删除/移除（drop）",
+      "action": "V1\\\\Admin\\\\Server\\\\AnyTLSController@drop",
+      "file": "routes/admin/post__api_v1_secure_path_drop__v1_admin_server_anytlscontroller_drop.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/v2node/drop",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "删除/移除（drop）",
+      "action": "V1\\\\Admin\\\\Server\\\\V2nodeController@drop",
+      "file": "routes/admin/post__api_v1_secure_path_drop__v1_admin_server_v2nodecontroller_drop.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/giftcard/drop",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "删除/移除（giftcard）",
+      "action": "V1\\\\Admin\\\\GiftcardController@drop",
+      "file": "routes/admin/post__api_v1_secure_path_giftcard_drop__v1_admin_giftcardcontroller_drop.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/giftcard/fetch",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取列表/数据（giftcard）",
+      "action": "V1\\\\Admin\\\\GiftcardController@fetch",
+      "file": "routes/admin/get__api_v1_secure_path_giftcard_fetch__v1_admin_giftcardcontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/giftcard/generate",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "生成（giftcard）",
+      "action": "V1\\\\Admin\\\\GiftcardController@generate",
+      "file": "routes/admin/post__api_v1_secure_path_giftcard_generate__v1_admin_giftcardcontroller_generate.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/knowledge/drop",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "删除/移除（knowledge）",
+      "action": "V1\\\\Admin\\\\KnowledgeController@drop",
+      "file": "routes/admin/post__api_v1_secure_path_knowledge_drop__v1_admin_knowledgecontroller_drop.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/knowledge/fetch",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取列表/数据（knowledge）",
+      "action": "V1\\\\Admin\\\\KnowledgeController@fetch",
+      "file": "routes/admin/get__api_v1_secure_path_knowledge_fetch__v1_admin_knowledgecontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/knowledge/getCategory",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（knowledge）",
+      "action": "V1\\\\Admin\\\\KnowledgeController@getCategory",
+      "file": "routes/admin/get__api_v1_secure_path_knowledge_getcategory__v1_admin_knowledgecontroller_getcategory.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/knowledge/save",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "保存（knowledge）",
+      "action": "V1\\\\Admin\\\\KnowledgeController@save",
+      "file": "routes/admin/post__api_v1_secure_path_knowledge_save__v1_admin_knowledgecontroller_save.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/knowledge/show",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "显示/启用（knowledge）",
+      "action": "V1\\\\Admin\\\\KnowledgeController@show",
+      "file": "routes/admin/post__api_v1_secure_path_knowledge_show__v1_admin_knowledgecontroller_show.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/knowledge/sort",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "排序（knowledge）",
+      "action": "V1\\\\Admin\\\\KnowledgeController@sort",
+      "file": "routes/admin/post__api_v1_secure_path_knowledge_sort__v1_admin_knowledgecontroller_sort.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/notice/drop",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "删除/移除（notice）",
+      "action": "V1\\\\Admin\\\\NoticeController@drop",
+      "file": "routes/admin/post__api_v1_secure_path_notice_drop__v1_admin_noticecontroller_drop.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/notice/fetch",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取列表/数据（notice）",
+      "action": "V1\\\\Admin\\\\NoticeController@fetch",
+      "file": "routes/admin/get__api_v1_secure_path_notice_fetch__v1_admin_noticecontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/notice/save",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "保存（notice）",
+      "action": "V1\\\\Admin\\\\NoticeController@save",
+      "file": "routes/admin/post__api_v1_secure_path_notice_save__v1_admin_noticecontroller_save.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/notice/show",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "显示/启用（notice）",
+      "action": "V1\\\\Admin\\\\NoticeController@show",
+      "file": "routes/admin/post__api_v1_secure_path_notice_show__v1_admin_noticecontroller_show.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/notice/update",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "更新（notice）",
+      "action": "V1\\\\Admin\\\\NoticeController@update",
+      "file": "routes/admin/post__api_v1_secure_path_notice_update__v1_admin_noticecontroller_update.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/order/assign",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "order 模块接口",
+      "action": "V1\\\\Admin\\\\OrderController@assign",
+      "file": "routes/admin/post__api_v1_secure_path_order_assign__v1_admin_ordercontroller_assign.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/order/cancel",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "取消（order）",
+      "action": "V1\\\\Admin\\\\OrderController@cancel",
+      "file": "routes/admin/post__api_v1_secure_path_order_cancel__v1_admin_ordercontroller_cancel.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/order/detail",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取详情（order）",
+      "action": "V1\\\\Admin\\\\OrderController@detail",
+      "file": "routes/admin/post__api_v1_secure_path_order_detail__v1_admin_ordercontroller_detail.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/order/fetch",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取列表/数据（order）",
+      "action": "V1\\\\Admin\\\\OrderController@fetch",
+      "file": "routes/admin/get__api_v1_secure_path_order_fetch__v1_admin_ordercontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/order/paid",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "order 模块接口",
+      "action": "V1\\\\Admin\\\\OrderController@paid",
+      "file": "routes/admin/post__api_v1_secure_path_order_paid__v1_admin_ordercontroller_paid.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/order/update",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "更新（order）",
+      "action": "V1\\\\Admin\\\\OrderController@update",
+      "file": "routes/admin/post__api_v1_secure_path_order_update__v1_admin_ordercontroller_update.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/payment/drop",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "删除/移除（payment）",
+      "action": "V1\\\\Admin\\\\PaymentController@drop",
+      "file": "routes/admin/post__api_v1_secure_path_payment_drop__v1_admin_paymentcontroller_drop.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/payment/fetch",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取列表/数据（payment）",
+      "action": "V1\\\\Admin\\\\PaymentController@fetch",
+      "file": "routes/admin/get__api_v1_secure_path_payment_fetch__v1_admin_paymentcontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/payment/getPaymentForm",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（payment）",
+      "action": "V1\\\\Admin\\\\PaymentController@getPaymentForm",
+      "file": "routes/admin/post__api_v1_secure_path_payment_getpaymentform__v1_admin_paymentcontroller_getpaymentform.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/payment/getPaymentMethods",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（payment）",
+      "action": "V1\\\\Admin\\\\PaymentController@getPaymentMethods",
+      "file": "routes/admin/get__api_v1_secure_path_payment_getpaymentmethods__v1_admin_paymentcontroller_getpaymentmethods.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/payment/save",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "保存（payment）",
+      "action": "V1\\\\Admin\\\\PaymentController@save",
+      "file": "routes/admin/post__api_v1_secure_path_payment_save__v1_admin_paymentcontroller_save.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/payment/show",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "显示/启用（payment）",
+      "action": "V1\\\\Admin\\\\PaymentController@show",
+      "file": "routes/admin/post__api_v1_secure_path_payment_show__v1_admin_paymentcontroller_show.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/payment/sort",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "排序（payment）",
+      "action": "V1\\\\Admin\\\\PaymentController@sort",
+      "file": "routes/admin/post__api_v1_secure_path_payment_sort__v1_admin_paymentcontroller_sort.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/plan/drop",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "删除/移除（plan）",
+      "action": "V1\\\\Admin\\\\PlanController@drop",
+      "file": "routes/admin/post__api_v1_secure_path_plan_drop__v1_admin_plancontroller_drop.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/plan/fetch",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取列表/数据（plan）",
+      "action": "V1\\\\Admin\\\\PlanController@fetch",
+      "file": "routes/admin/get__api_v1_secure_path_plan_fetch__v1_admin_plancontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/plan/save",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "保存（plan）",
+      "action": "V1\\\\Admin\\\\PlanController@save",
+      "file": "routes/admin/post__api_v1_secure_path_plan_save__v1_admin_plancontroller_save.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/plan/sort",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "排序（plan）",
+      "action": "V1\\\\Admin\\\\PlanController@sort",
+      "file": "routes/admin/post__api_v1_secure_path_plan_sort__v1_admin_plancontroller_sort.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/plan/update",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "更新（plan）",
+      "action": "V1\\\\Admin\\\\PlanController@update",
+      "file": "routes/admin/post__api_v1_secure_path_plan_update__v1_admin_plancontroller_update.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/trojan/save",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "保存（save）",
+      "action": "V1\\\\Admin\\\\Server\\\\TrojanController@save",
+      "file": "routes/admin/post__api_v1_secure_path_server_trojan_save__v1_admin_server_trojancontroller_save.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/vmess/save",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "保存（save）",
+      "action": "V1\\\\Admin\\\\Server\\\\VmessController@save",
+      "file": "routes/admin/post__api_v1_secure_path_server_vmess_save__v1_admin_server_vmesscontroller_save.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/shadowsocks/save",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "保存（save）",
+      "action": "V1\\\\Admin\\\\Server\\\\ShadowsocksController@save",
+      "file": "routes/admin/post__api_v1_secure_path_server_shadowsocks_save__v1_admin_server_shadowsockscontroller_save.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/tuic/save",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "保存（save）",
+      "action": "V1\\\\Admin\\\\Server\\\\TuicController@save",
+      "file": "routes/admin/post__api_v1_secure_path_server_tuic_save__v1_admin_server_tuiccontroller_save.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/hysteria/save",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "保存（save）",
+      "action": "V1\\\\Admin\\\\Server\\\\HysteriaController@save",
+      "file": "routes/admin/post__api_v1_secure_path_server_hysteria_save__v1_admin_server_hysteriacontroller_save.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/vless/save",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "保存（save）",
+      "action": "V1\\\\Admin\\\\Server\\\\VlessController@save",
+      "file": "routes/admin/post__api_v1_secure_path_server_vless_save__v1_admin_server_vlesscontroller_save.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/anytls/save",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "保存（save）",
+      "action": "V1\\\\Admin\\\\Server\\\\AnyTLSController@save",
+      "file": "routes/admin/post__api_v1_secure_path_server_anytls_save__v1_admin_server_anytlscontroller_save.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/v2node/save",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "保存（save）",
+      "action": "V1\\\\Admin\\\\Server\\\\V2nodeController@save",
+      "file": "routes/admin/post__api_v1_secure_path_server_v2node_save__v1_admin_server_v2nodecontroller_save.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/group/drop",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "删除/移除（server）",
+      "action": "V1\\\\Admin\\\\Server\\\\GroupController@drop",
+      "file": "routes/admin/post__api_v1_secure_path_server_group_drop__v1_admin_server_groupcontroller_drop.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/group/fetch",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取列表/数据（server）",
+      "action": "V1\\\\Admin\\\\Server\\\\GroupController@fetch",
+      "file": "routes/admin/get__api_v1_secure_path_server_group_fetch__v1_admin_server_groupcontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/group/save",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "保存（server）",
+      "action": "V1\\\\Admin\\\\Server\\\\GroupController@save",
+      "file": "routes/admin/post__api_v1_secure_path_server_group_save__v1_admin_server_groupcontroller_save.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/manage/getNodes",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（server）",
+      "action": "V1\\\\Admin\\\\Server\\\\ManageController@getNodes",
+      "file": "routes/admin/get__api_v1_secure_path_server_manage_getnodes__v1_admin_server_managecontroller_getnodes.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/manage/sort",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "排序（server）",
+      "action": "V1\\\\Admin\\\\Server\\\\ManageController@sort",
+      "file": "routes/admin/post__api_v1_secure_path_server_manage_sort__v1_admin_server_managecontroller_sort.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/route/drop",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "删除/移除（server）",
+      "action": "V1\\\\Admin\\\\Server\\\\RouteController@drop",
+      "file": "routes/admin/post__api_v1_secure_path_server_route_drop__v1_admin_server_routecontroller_drop.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/route/fetch",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取列表/数据（server）",
+      "action": "V1\\\\Admin\\\\Server\\\\RouteController@fetch",
+      "file": "routes/admin/get__api_v1_secure_path_server_route_fetch__v1_admin_server_routecontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/route/save",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "保存（server）",
+      "action": "V1\\\\Admin\\\\Server\\\\RouteController@save",
+      "file": "routes/admin/post__api_v1_secure_path_server_route_save__v1_admin_server_routecontroller_save.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/stat/getOrder",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（stat）",
+      "action": "V1\\\\Admin\\\\StatController@getOrder",
+      "file": "routes/admin/get__api_v1_secure_path_stat_getorder__v1_admin_statcontroller_getorder.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/stat/getOverride",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（stat）",
+      "action": "V1\\\\Admin\\\\StatController@getOverride",
+      "file": "routes/admin/get__api_v1_secure_path_stat_getoverride__v1_admin_statcontroller_getoverride.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/stat/getRanking",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（stat）",
+      "action": "V1\\\\Admin\\\\StatController@getRanking",
+      "file": "routes/admin/get__api_v1_secure_path_stat_getranking__v1_admin_statcontroller_getranking.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/stat/getServerLastRank",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（stat）",
+      "action": "V1\\\\Admin\\\\StatController@getServerLastRank",
+      "file": "routes/admin/get__api_v1_secure_path_stat_getserverlastrank__v1_admin_statcontroller_getserverlastrank.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/stat/getServerTodayRank",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（stat）",
+      "action": "V1\\\\Admin\\\\StatController@getServerTodayRank",
+      "file": "routes/admin/get__api_v1_secure_path_stat_getservertodayrank__v1_admin_statcontroller_getservertodayrank.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/stat/getStat",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（stat）",
+      "action": "V1\\\\Admin\\\\StatController@getStat",
+      "file": "routes/admin/get__api_v1_secure_path_stat_getstat__v1_admin_statcontroller_getstat.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/stat/getStatRecord",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（stat）",
+      "action": "V1\\\\Admin\\\\StatController@getStatRecord",
+      "file": "routes/admin/get__api_v1_secure_path_stat_getstatrecord__v1_admin_statcontroller_getstatrecord.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/stat/getStatUser",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（stat）",
+      "action": "V1\\\\Admin\\\\StatController@getStatUser",
+      "file": "routes/admin/get__api_v1_secure_path_stat_getstatuser__v1_admin_statcontroller_getstatuser.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/stat/getUserLastRank",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（stat）",
+      "action": "V1\\\\Admin\\\\StatController@getUserLastRank",
+      "file": "routes/admin/get__api_v1_secure_path_stat_getuserlastrank__v1_admin_statcontroller_getuserlastrank.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/stat/getUserTodayRank",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（stat）",
+      "action": "V1\\\\Admin\\\\StatController@getUserTodayRank",
+      "file": "routes/admin/get__api_v1_secure_path_stat_getusertodayrank__v1_admin_statcontroller_getusertodayrank.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/system/getQueueMasters",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（system）",
+      "action": "\\\\Laravel\\\\Horizon\\\\Http\\\\Controllers\\\\MasterSupervisorController@index",
+      "file": "routes/admin/get__api_v1_secure_path_system_getqueuemasters__laravel_horizon_http_controllers_mastersupervisorcontroller_index.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/system/getQueueStats",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（system）",
+      "action": "V1\\\\Admin\\\\SystemController@getQueueStats",
+      "file": "routes/admin/get__api_v1_secure_path_system_getqueuestats__v1_admin_systemcontroller_getqueuestats.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/system/getQueueWorkload",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（system）",
+      "action": "V1\\\\Admin\\\\SystemController@getQueueWorkload",
+      "file": "routes/admin/get__api_v1_secure_path_system_getqueueworkload__v1_admin_systemcontroller_getqueueworkload.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/system/getSystemLog",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（system）",
+      "action": "V1\\\\Admin\\\\SystemController@getSystemLog",
+      "file": "routes/admin/get__api_v1_secure_path_system_getsystemlog__v1_admin_systemcontroller_getsystemlog.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/system/getSystemStatus",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（system）",
+      "action": "V1\\\\Admin\\\\SystemController@getSystemStatus",
+      "file": "routes/admin/get__api_v1_secure_path_system_getsystemstatus__v1_admin_systemcontroller_getsystemstatus.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/theme/getThemeConfig",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取配置（theme）",
+      "action": "V1\\\\Admin\\\\ThemeController@getThemeConfig",
+      "file": "routes/admin/post__api_v1_secure_path_theme_getthemeconfig__v1_admin_themecontroller_getthemeconfig.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/theme/getThemes",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取数据（theme）",
+      "action": "V1\\\\Admin\\\\ThemeController@getThemes",
+      "file": "routes/admin/get__api_v1_secure_path_theme_getthemes__v1_admin_themecontroller_getthemes.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/theme/saveThemeConfig",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取配置（theme）",
+      "action": "V1\\\\Admin\\\\ThemeController@saveThemeConfig",
+      "file": "routes/admin/post__api_v1_secure_path_theme_savethemeconfig__v1_admin_themecontroller_savethemeconfig.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/ticket/close",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "关闭（ticket）",
+      "action": "V1\\\\Admin\\\\TicketController@close",
+      "file": "routes/admin/post__api_v1_secure_path_ticket_close__v1_admin_ticketcontroller_close.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/ticket/fetch",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取列表/数据（ticket）",
+      "action": "V1\\\\Admin\\\\TicketController@fetch",
+      "file": "routes/admin/get__api_v1_secure_path_ticket_fetch__v1_admin_ticketcontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/ticket/reply",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "回复（ticket）",
+      "action": "V1\\\\Admin\\\\TicketController@reply",
+      "file": "routes/admin/post__api_v1_secure_path_ticket_reply__v1_admin_ticketcontroller_reply.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/trojan/update",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "更新（update）",
+      "action": "V1\\\\Admin\\\\Server\\\\TrojanController@update",
+      "file": "routes/admin/post__api_v1_secure_path_update__v1_admin_server_trojancontroller_update.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/vmess/update",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "更新（update）",
+      "action": "V1\\\\Admin\\\\Server\\\\VmessController@update",
+      "file": "routes/admin/post__api_v1_secure_path_update__v1_admin_server_vmesscontroller_update.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/shadowsocks/update",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "更新（update）",
+      "action": "V1\\\\Admin\\\\Server\\\\ShadowsocksController@update",
+      "file": "routes/admin/post__api_v1_secure_path_update__v1_admin_server_shadowsockscontroller_update.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/tuic/update",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "更新（update）",
+      "action": "V1\\\\Admin\\\\Server\\\\TuicController@update",
+      "file": "routes/admin/post__api_v1_secure_path_update__v1_admin_server_tuiccontroller_update.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/hysteria/update",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "更新（update）",
+      "action": "V1\\\\Admin\\\\Server\\\\HysteriaController@update",
+      "file": "routes/admin/post__api_v1_secure_path_update__v1_admin_server_hysteriacontroller_update.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/vless/update",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "更新（update）",
+      "action": "V1\\\\Admin\\\\Server\\\\VlessController@update",
+      "file": "routes/admin/post__api_v1_secure_path_update__v1_admin_server_vlesscontroller_update.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/anytls/update",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "更新（update）",
+      "action": "V1\\\\Admin\\\\Server\\\\AnyTLSController@update",
+      "file": "routes/admin/post__api_v1_secure_path_update__v1_admin_server_anytlscontroller_update.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/server/v2node/update",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "更新（update）",
+      "action": "V1\\\\Admin\\\\Server\\\\V2nodeController@update",
+      "file": "routes/admin/post__api_v1_secure_path_update__v1_admin_server_v2nodecontroller_update.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/user/allDel",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "user 模块接口",
+      "action": "V1\\\\Admin\\\\UserController@allDel",
+      "file": "routes/admin/post__api_v1_secure_path_user_alldel__v1_admin_usercontroller_alldel.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/user/ban",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "封禁（user）",
+      "action": "V1\\\\Admin\\\\UserController@ban",
+      "file": "routes/admin/post__api_v1_secure_path_user_ban__v1_admin_usercontroller_ban.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/user/delUser",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "user 模块接口",
+      "action": "V1\\\\Admin\\\\UserController@delUser",
+      "file": "routes/admin/post__api_v1_secure_path_user_deluser__v1_admin_usercontroller_deluser.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/user/dumpCSV",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "user 模块接口",
+      "action": "V1\\\\Admin\\\\UserController@dumpCSV",
+      "file": "routes/admin/post__api_v1_secure_path_user_dumpcsv__v1_admin_usercontroller_dumpcsv.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/user/fetch",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取列表/数据（user）",
+      "action": "V1\\\\Admin\\\\UserController@fetch",
+      "file": "routes/admin/get__api_v1_secure_path_user_fetch__v1_admin_usercontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/user/generate",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "生成（user）",
+      "action": "V1\\\\Admin\\\\UserController@generate",
+      "file": "routes/admin/post__api_v1_secure_path_user_generate__v1_admin_usercontroller_generate.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/user/getUserInfoById",
+      "method": "GET",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "获取信息（user）",
+      "action": "V1\\\\Admin\\\\UserController@getUserInfoById",
+      "file": "routes/admin/get__api_v1_secure_path_user_getuserinfobyid__v1_admin_usercontroller_getuserinfobyid.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/user/resetSecret",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "user 模块接口",
+      "action": "V1\\\\Admin\\\\UserController@resetSecret",
+      "file": "routes/admin/post__api_v1_secure_path_user_resetsecret__v1_admin_usercontroller_resetsecret.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/user/sendMail",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "发送邮件（user）",
+      "action": "V1\\\\Admin\\\\UserController@sendMail",
+      "file": "routes/admin/post__api_v1_secure_path_user_sendmail__v1_admin_usercontroller_sendmail.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/user/setInviteUser",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "user 模块接口",
+      "action": "V1\\\\Admin\\\\UserController@setInviteUser",
+      "file": "routes/admin/post__api_v1_secure_path_user_setinviteuser__v1_admin_usercontroller_setinviteuser.json"
+    },
+    {
+      "path": "/api/v1/{secure_path}/user/update",
+      "method": "POST",
+      "module": "admin",
+      "auth": "admin(auth_data)",
+      "description": "更新（user）",
+      "action": "V1\\\\Admin\\\\UserController@update",
+      "file": "routes/admin/post__api_v1_secure_path_user_update__v1_admin_usercontroller_update.json"
+    },
+    {
+      "path": "/api/v1/staff/notice/drop",
+      "method": "POST",
+      "module": "staff",
+      "auth": "staff(auth_data)",
+      "description": "删除/移除（staff）",
+      "action": "V1\\\\Admin\\\\NoticeController@drop",
+      "file": "routes/staff/post__api_v1_staff_notice_drop__v1_admin_noticecontroller_drop.json"
+    },
+    {
+      "path": "/api/v1/staff/notice/fetch",
+      "method": "GET",
+      "module": "staff",
+      "auth": "staff(auth_data)",
+      "description": "获取列表/数据（staff）",
+      "action": "V1\\\\Admin\\\\NoticeController@fetch",
+      "file": "routes/staff/get__api_v1_staff_notice_fetch__v1_admin_noticecontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/staff/notice/save",
+      "method": "POST",
+      "module": "staff",
+      "auth": "staff(auth_data)",
+      "description": "保存（staff）",
+      "action": "V1\\\\Admin\\\\NoticeController@save",
+      "file": "routes/staff/post__api_v1_staff_notice_save__v1_admin_noticecontroller_save.json"
+    },
+    {
+      "path": "/api/v1/staff/notice/update",
+      "method": "POST",
+      "module": "staff",
+      "auth": "staff(auth_data)",
+      "description": "更新（staff）",
+      "action": "V1\\\\Admin\\\\NoticeController@update",
+      "file": "routes/staff/post__api_v1_staff_notice_update__v1_admin_noticecontroller_update.json"
+    },
+    {
+      "path": "/api/v1/staff/plan/fetch",
+      "method": "GET",
+      "module": "staff",
+      "auth": "staff(auth_data)",
+      "description": "获取列表/数据（staff）",
+      "action": "V1\\\\Staff\\\\PlanController@fetch",
+      "file": "routes/staff/get__api_v1_staff_plan_fetch__v1_staff_plancontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/staff/ticket/close",
+      "method": "POST",
+      "module": "staff",
+      "auth": "staff(auth_data)",
+      "description": "关闭（staff）",
+      "action": "V1\\\\Staff\\\\TicketController@close",
+      "file": "routes/staff/post__api_v1_staff_ticket_close__v1_staff_ticketcontroller_close.json"
+    },
+    {
+      "path": "/api/v1/staff/ticket/fetch",
+      "method": "GET",
+      "module": "staff",
+      "auth": "staff(auth_data)",
+      "description": "获取列表/数据（staff）",
+      "action": "V1\\\\Staff\\\\TicketController@fetch",
+      "file": "routes/staff/get__api_v1_staff_ticket_fetch__v1_staff_ticketcontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/staff/ticket/reply",
+      "method": "POST",
+      "module": "staff",
+      "auth": "staff(auth_data)",
+      "description": "回复（staff）",
+      "action": "V1\\\\Staff\\\\TicketController@reply",
+      "file": "routes/staff/post__api_v1_staff_ticket_reply__v1_staff_ticketcontroller_reply.json"
+    },
+    {
+      "path": "/api/v1/staff/user/ban",
+      "method": "POST",
+      "module": "staff",
+      "auth": "staff(auth_data)",
+      "description": "封禁（staff）",
+      "action": "V1\\\\Staff\\\\UserController@ban",
+      "file": "routes/staff/post__api_v1_staff_user_ban__v1_staff_usercontroller_ban.json"
+    },
+    {
+      "path": "/api/v1/staff/user/getUserInfoById",
+      "method": "GET",
+      "module": "staff",
+      "auth": "staff(auth_data)",
+      "description": "获取信息（staff）",
+      "action": "V1\\\\Staff\\\\UserController@getUserInfoById",
+      "file": "routes/staff/get__api_v1_staff_user_getuserinfobyid__v1_staff_usercontroller_getuserinfobyid.json"
+    },
+    {
+      "path": "/api/v1/staff/user/sendMail",
+      "method": "POST",
+      "module": "staff",
+      "auth": "staff(auth_data)",
+      "description": "发送邮件（staff）",
+      "action": "V1\\\\Staff\\\\UserController@sendMail",
+      "file": "routes/staff/post__api_v1_staff_user_sendmail__v1_staff_usercontroller_sendmail.json"
+    },
+    {
+      "path": "/api/v1/staff/user/update",
+      "method": "POST",
+      "module": "staff",
+      "auth": "staff(auth_data)",
+      "description": "更新（staff）",
+      "action": "V1\\\\Staff\\\\UserController@update",
+      "file": "routes/staff/post__api_v1_staff_user_update__v1_staff_usercontroller_update.json"
+    },
+    {
+      "path": "/api/v1/passport/auth/forget",
+      "method": "POST",
+      "module": "passport",
+      "auth": "guest",
+      "description": "忘记密码/重置邮件（passport）",
+      "action": "V1\\\\Passport\\\\AuthController@forget",
+      "file": "routes/passport/post__api_v1_passport_auth_forget__v1_passport_authcontroller_forget.json"
+    },
+    {
+      "path": "/api/v1/passport/auth/getQuickLoginUrl",
+      "method": "POST",
+      "module": "passport",
+      "auth": "guest",
+      "description": "登录（passport）",
+      "action": "V1\\\\Passport\\\\AuthController@getQuickLoginUrl",
+      "file": "routes/passport/post__api_v1_passport_auth_getquickloginurl__v1_passport_authcontroller_getquickloginurl.json"
+    },
+    {
+      "path": "/api/v1/passport/auth/login",
+      "method": "POST",
+      "module": "passport",
+      "auth": "guest",
+      "description": "登录（passport）",
+      "action": "V1\\\\Passport\\\\AuthController@login",
+      "file": "routes/passport/post__api_v1_passport_auth_login__v1_passport_authcontroller_login.json"
+    },
+    {
+      "path": "/api/v1/passport/auth/loginWithMailLink",
+      "method": "POST",
+      "module": "passport",
+      "auth": "guest",
+      "description": "登录（passport）",
+      "action": "V1\\\\Passport\\\\AuthController@loginWithMailLink",
+      "file": "routes/passport/post__api_v1_passport_auth_loginwithmaillink__v1_passport_authcontroller_loginwithmaillink.json"
+    },
+    {
+      "path": "/api/v1/passport/auth/register",
+      "method": "POST",
+      "module": "passport",
+      "auth": "guest",
+      "description": "注册（passport）",
+      "action": "V1\\\\Passport\\\\AuthController@register",
+      "file": "routes/passport/post__api_v1_passport_auth_register__v1_passport_authcontroller_register.json"
+    },
+    {
+      "path": "/api/v1/passport/auth/token2Login",
+      "method": "GET",
+      "module": "passport",
+      "auth": "guest",
+      "description": "登录（passport）",
+      "action": "V1\\\\Passport\\\\AuthController@token2Login",
+      "file": "routes/passport/get__api_v1_passport_auth_token2login__v1_passport_authcontroller_token2login.json"
+    },
+    {
+      "path": "/api/v1/passport/comm/pv",
+      "method": "POST",
+      "module": "passport",
+      "auth": "guest",
+      "description": "passport 模块接口",
+      "action": "V1\\\\Passport\\\\CommController@pv",
+      "file": "routes/passport/post__api_v1_passport_comm_pv__v1_passport_commcontroller_pv.json"
+    },
+    {
+      "path": "/api/v1/passport/comm/sendEmailVerify",
+      "method": "POST",
+      "module": "passport",
+      "auth": "guest",
+      "description": "passport 模块接口",
+      "action": "V1\\\\Passport\\\\CommController@sendEmailVerify",
+      "file": "routes/passport/post__api_v1_passport_comm_sendemailverify__v1_passport_commcontroller_sendemailverify.json"
+    },
+    {
+      "path": "/api/v1/client/app/getConfig",
+      "method": "GET",
+      "module": "client",
+      "auth": "client/server token",
+      "description": "获取配置（client）",
+      "action": "V1\\\\Client\\\\AppController@getConfig",
+      "file": "routes/client/get__api_v1_client_app_getconfig__v1_client_appcontroller_getconfig.json"
+    },
+    {
+      "path": "/api/v1/client/app/getVersion",
+      "method": "GET",
+      "module": "client",
+      "auth": "client/server token",
+      "description": "获取数据（client）",
+      "action": "V1\\\\Client\\\\AppController@getVersion",
+      "file": "routes/client/get__api_v1_client_app_getversion__v1_client_appcontroller_getversion.json"
+    },
+    {
+      "path": "/api/v1/client/subscribe",
+      "method": "GET",
+      "module": "node-backend",
+      "auth": "client/server token",
+      "description": "订阅（client）",
+      "action": "V1\\\\Client\\\\ClientController@subscribe",
+      "file": "routes/node-backend/get__api_v1_client_subscribe__v1_client_clientcontroller_subscribe.json"
+    },
+    {
+      "path": "/api/v1/server/deepbwork/user",
+      "method": "ANY",
+      "module": "node-backend",
+      "auth": "client/server token",
+      "description": "节点后端交互接口（deepbwork.user）",
+      "action": "V1\\Server\\DeepbworkController@user",
+      "file": "routes/node-backend/any__api_v1_server_deepbwork_user__v1_server_deepbworkcontroller_user.json"
+    },
+    {
+      "path": "/api/v1/server/deepbwork/submit",
+      "method": "ANY",
+      "module": "node-backend",
+      "auth": "client/server token",
+      "description": "节点后端交互接口（deepbwork.submit）",
+      "action": "V1\\Server\\DeepbworkController@submit",
+      "file": "routes/node-backend/any__api_v1_server_deepbwork_submit__v1_server_deepbworkcontroller_submit.json"
+    },
+    {
+      "path": "/api/v1/server/deepbwork/config",
+      "method": "ANY",
+      "module": "node-backend",
+      "auth": "client/server token",
+      "description": "节点后端交互接口（deepbwork.config）",
+      "action": "V1\\Server\\DeepbworkController@config",
+      "file": "routes/node-backend/any__api_v1_server_deepbwork_config__v1_server_deepbworkcontroller_config.json"
+    },
+    {
+      "path": "/api/v1/server/shadowsocksTidalab/user",
+      "method": "ANY",
+      "module": "node-backend",
+      "auth": "client/server token",
+      "description": "节点后端交互接口（shadowsocksTidalab.user）",
+      "action": "V1\\Server\\ShadowsocksTidalabController@user",
+      "file": "routes/node-backend/any__api_v1_server_shadowsockstidalab_user__v1_server_shadowsockstidalabcontroller_user.json"
+    },
+    {
+      "path": "/api/v1/server/shadowsocksTidalab/submit",
+      "method": "ANY",
+      "module": "node-backend",
+      "auth": "client/server token",
+      "description": "节点后端交互接口（shadowsocksTidalab.submit）",
+      "action": "V1\\Server\\ShadowsocksTidalabController@submit",
+      "file": "routes/node-backend/any__api_v1_server_shadowsockstidalab_submit__v1_server_shadowsockstidalabcontroller_submit.json"
+    },
+    {
+      "path": "/api/v1/server/trojanTidalab/user",
+      "method": "ANY",
+      "module": "node-backend",
+      "auth": "client/server token",
+      "description": "节点后端交互接口（trojanTidalab.user）",
+      "action": "V1\\Server\\TrojanTidalabController@user",
+      "file": "routes/node-backend/any__api_v1_server_trojantidalab_user__v1_server_trojantidalabcontroller_user.json"
+    },
+    {
+      "path": "/api/v1/server/trojanTidalab/submit",
+      "method": "ANY",
+      "module": "node-backend",
+      "auth": "client/server token",
+      "description": "节点后端交互接口（trojanTidalab.submit）",
+      "action": "V1\\Server\\TrojanTidalabController@submit",
+      "file": "routes/node-backend/any__api_v1_server_trojantidalab_submit__v1_server_trojantidalabcontroller_submit.json"
+    },
+    {
+      "path": "/api/v1/server/trojanTidalab/config",
+      "method": "ANY",
+      "module": "node-backend",
+      "auth": "client/server token",
+      "description": "节点后端交互接口（trojanTidalab.config）",
+      "action": "V1\\Server\\TrojanTidalabController@config",
+      "file": "routes/node-backend/any__api_v1_server_trojantidalab_config__v1_server_trojantidalabcontroller_config.json"
+    },
+    {
+      "path": "/api/v1/server/uniProxy/user",
+      "method": "ANY",
+      "module": "node-backend",
+      "auth": "client/server token",
+      "description": "节点后端交互接口（uniProxy.user）",
+      "action": "V1\\Server\\UniProxyController@user",
+      "file": "routes/node-backend/any__api_v1_server_uniproxy_user__v1_server_uniproxycontroller_user.json"
+    },
+    {
+      "path": "/api/v1/server/uniProxy/push",
+      "method": "ANY",
+      "module": "node-backend",
+      "auth": "client/server token",
+      "description": "节点后端交互接口（uniProxy.push）",
+      "action": "V1\\Server\\UniProxyController@push",
+      "file": "routes/node-backend/any__api_v1_server_uniproxy_push__v1_server_uniproxycontroller_push.json"
+    },
+    {
+      "path": "/api/v1/server/uniProxy/alivelist",
+      "method": "ANY",
+      "module": "node-backend",
+      "auth": "client/server token",
+      "description": "节点后端交互接口（uniProxy.alivelist）",
+      "action": "V1\\Server\\UniProxyController@alivelist",
+      "file": "routes/node-backend/any__api_v1_server_uniproxy_alivelist__v1_server_uniproxycontroller_alivelist.json"
+    },
+    {
+      "path": "/api/v1/server/uniProxy/alive",
+      "method": "ANY",
+      "module": "node-backend",
+      "auth": "client/server token",
+      "description": "节点后端交互接口（uniProxy.alive）",
+      "action": "V1\\Server\\UniProxyController@alive",
+      "file": "routes/node-backend/any__api_v1_server_uniproxy_alive__v1_server_uniproxycontroller_alive.json"
+    },
+    {
+      "path": "/api/v1/server/uniProxy/config",
+      "method": "ANY",
+      "module": "node-backend",
+      "auth": "client/server token",
+      "description": "节点后端交互接口（uniProxy.config）",
+      "action": "V1\\Server\\UniProxyController@config",
+      "file": "routes/node-backend/any__api_v1_server_uniproxy_config__v1_server_uniproxycontroller_config.json"
+    },
+    {
+      "path": "/api/v1/user/changePassword",
+      "method": "POST",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "user 模块接口",
+      "action": "V1\\\\User\\\\UserController@changePassword",
+      "file": "routes/user/post__api_v1_user_changepassword__v1_user_usercontroller_changepassword.json"
+    },
+    {
+      "path": "/api/v1/user/checkLogin",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "登录（user）",
+      "action": "V1\\\\User\\\\UserController@checkLogin",
+      "file": "routes/user/get__api_v1_user_checklogin__v1_user_usercontroller_checklogin.json"
+    },
+    {
+      "path": "/api/v1/user/comm/config",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取配置（user）",
+      "action": "V1\\\\User\\\\CommController@config",
+      "file": "routes/user/get__api_v1_user_comm_config__v1_user_commcontroller_config.json"
+    },
+    {
+      "path": "/api/v1/user/comm/getStripePublicKey",
+      "method": "POST",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取数据（user）",
+      "action": "V1\\\\User\\\\CommController@getStripePublicKey",
+      "file": "routes/user/post__api_v1_user_comm_getstripepublickey__v1_user_commcontroller_getstripepublickey.json"
+    },
+    {
+      "path": "/api/v1/user/coupon/check",
+      "method": "POST",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "检查/校验（user）",
+      "action": "V1\\\\User\\\\CouponController@check",
+      "file": "routes/user/post__api_v1_user_coupon_check__v1_user_couponcontroller_check.json"
+    },
+    {
+      "path": "/api/v1/user/getActiveSession",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取数据（user）",
+      "action": "V1\\\\User\\\\UserController@getActiveSession",
+      "file": "routes/user/get__api_v1_user_getactivesession__v1_user_usercontroller_getactivesession.json"
+    },
+    {
+      "path": "/api/v1/user/getQuickLoginUrl",
+      "method": "POST",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "登录（user）",
+      "action": "V1\\\\User\\\\UserController@getQuickLoginUrl",
+      "file": "routes/user/post__api_v1_user_getquickloginurl__v1_user_usercontroller_getquickloginurl.json"
+    },
+    {
+      "path": "/api/v1/user/getStat",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取数据（user）",
+      "action": "V1\\\\User\\\\UserController@getStat",
+      "file": "routes/user/get__api_v1_user_getstat__v1_user_usercontroller_getstat.json"
+    },
+    {
+      "path": "/api/v1/user/getSubscribe",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取数据（user）",
+      "action": "V1\\\\User\\\\UserController@getSubscribe",
+      "file": "routes/user/get__api_v1_user_getsubscribe__v1_user_usercontroller_getsubscribe.json"
+    },
+    {
+      "path": "/api/v1/user/info",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取信息（user）",
+      "action": "V1\\\\User\\\\UserController@info",
+      "file": "routes/user/get__api_v1_user_info__v1_user_usercontroller_info.json"
+    },
+    {
+      "path": "/api/v1/user/invite/details",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取详情（user）",
+      "action": "V1\\\\User\\\\InviteController@details",
+      "file": "routes/user/get__api_v1_user_invite_details__v1_user_invitecontroller_details.json"
+    },
+    {
+      "path": "/api/v1/user/invite/fetch",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取列表/数据（user）",
+      "action": "V1\\\\User\\\\InviteController@fetch",
+      "file": "routes/user/get__api_v1_user_invite_fetch__v1_user_invitecontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/user/invite/save",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "保存（user）",
+      "action": "V1\\\\User\\\\InviteController@save",
+      "file": "routes/user/get__api_v1_user_invite_save__v1_user_invitecontroller_save.json"
+    },
+    {
+      "path": "/api/v1/user/knowledge/fetch",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取列表/数据（user）",
+      "action": "V1\\\\User\\\\KnowledgeController@fetch",
+      "file": "routes/user/get__api_v1_user_knowledge_fetch__v1_user_knowledgecontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/user/knowledge/getCategory",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取数据（user）",
+      "action": "V1\\\\User\\\\KnowledgeController@getCategory",
+      "file": "routes/user/get__api_v1_user_knowledge_getcategory__v1_user_knowledgecontroller_getcategory.json"
+    },
+    {
+      "path": "/api/v1/user/newPeriod",
+      "method": "POST",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "user 模块接口",
+      "action": "V1\\\\User\\\\UserController@newPeriod",
+      "file": "routes/user/post__api_v1_user_newperiod__v1_user_usercontroller_newperiod.json"
+    },
+    {
+      "path": "/api/v1/user/notice/fetch",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取列表/数据（user）",
+      "action": "V1\\\\User\\\\NoticeController@fetch",
+      "file": "routes/user/get__api_v1_user_notice_fetch__v1_user_noticecontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/user/order/cancel",
+      "method": "POST",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "取消（user）",
+      "action": "V1\\\\User\\\\OrderController@cancel",
+      "file": "routes/user/post__api_v1_user_order_cancel__v1_user_ordercontroller_cancel.json"
+    },
+    {
+      "path": "/api/v1/user/order/check",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "检查/校验（user）",
+      "action": "V1\\\\User\\\\OrderController@check",
+      "file": "routes/user/get__api_v1_user_order_check__v1_user_ordercontroller_check.json"
+    },
+    {
+      "path": "/api/v1/user/order/checkout",
+      "method": "POST",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "检查/校验（user）",
+      "action": "V1\\\\User\\\\OrderController@checkout",
+      "file": "routes/user/post__api_v1_user_order_checkout__v1_user_ordercontroller_checkout.json"
+    },
+    {
+      "path": "/api/v1/user/order/detail",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取详情（user）",
+      "action": "V1\\\\User\\\\OrderController@detail",
+      "file": "routes/user/get__api_v1_user_order_detail__v1_user_ordercontroller_detail.json"
+    },
+    {
+      "path": "/api/v1/user/order/fetch",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取列表/数据（user）",
+      "action": "V1\\\\User\\\\OrderController@fetch",
+      "file": "routes/user/get__api_v1_user_order_fetch__v1_user_ordercontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/user/order/getPaymentMethod",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取数据（user）",
+      "action": "V1\\\\User\\\\OrderController@getPaymentMethod",
+      "file": "routes/user/get__api_v1_user_order_getpaymentmethod__v1_user_ordercontroller_getpaymentmethod.json"
+    },
+    {
+      "path": "/api/v1/user/order/save",
+      "method": "POST",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "保存（user）",
+      "action": "V1\\\\User\\\\OrderController@save",
+      "file": "routes/user/post__api_v1_user_order_save__v1_user_ordercontroller_save.json"
+    },
+    {
+      "path": "/api/v1/user/plan/fetch",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取列表/数据（user）",
+      "action": "V1\\\\User\\\\PlanController@fetch",
+      "file": "routes/user/get__api_v1_user_plan_fetch__v1_user_plancontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/user/redeemgiftcard",
+      "method": "POST",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "user 模块接口",
+      "action": "V1\\\\User\\\\UserController@redeemgiftcard",
+      "file": "routes/user/post__api_v1_user_redeemgiftcard__v1_user_usercontroller_redeemgiftcard.json"
+    },
+    {
+      "path": "/api/v1/user/removeActiveSession",
+      "method": "POST",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "user 模块接口",
+      "action": "V1\\\\User\\\\UserController@removeActiveSession",
+      "file": "routes/user/post__api_v1_user_removeactivesession__v1_user_usercontroller_removeactivesession.json"
+    },
+    {
+      "path": "/api/v1/user/resetSecurity",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "user 模块接口",
+      "action": "V1\\\\User\\\\UserController@resetSecurity",
+      "file": "routes/user/get__api_v1_user_resetsecurity__v1_user_usercontroller_resetsecurity.json"
+    },
+    {
+      "path": "/api/v1/user/server/fetch",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取列表/数据（user）",
+      "action": "V1\\\\User\\\\ServerController@fetch",
+      "file": "routes/user/get__api_v1_user_server_fetch__v1_user_servercontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/user/stat/getTrafficLog",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取数据（user）",
+      "action": "V1\\\\User\\\\StatController@getTrafficLog",
+      "file": "routes/user/get__api_v1_user_stat_gettrafficlog__v1_user_statcontroller_gettrafficlog.json"
+    },
+    {
+      "path": "/api/v1/user/telegram/getBotInfo",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取信息（user）",
+      "action": "V1\\\\User\\\\TelegramController@getBotInfo",
+      "file": "routes/user/get__api_v1_user_telegram_getbotinfo__v1_user_telegramcontroller_getbotinfo.json"
+    },
+    {
+      "path": "/api/v1/user/ticket/close",
+      "method": "POST",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "关闭（user）",
+      "action": "V1\\\\User\\\\TicketController@close",
+      "file": "routes/user/post__api_v1_user_ticket_close__v1_user_ticketcontroller_close.json"
+    },
+    {
+      "path": "/api/v1/user/ticket/fetch",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "获取列表/数据（user）",
+      "action": "V1\\\\User\\\\TicketController@fetch",
+      "file": "routes/user/get__api_v1_user_ticket_fetch__v1_user_ticketcontroller_fetch.json"
+    },
+    {
+      "path": "/api/v1/user/ticket/reply",
+      "method": "POST",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "回复（user）",
+      "action": "V1\\\\User\\\\TicketController@reply",
+      "file": "routes/user/post__api_v1_user_ticket_reply__v1_user_ticketcontroller_reply.json"
+    },
+    {
+      "path": "/api/v1/user/ticket/save",
+      "method": "POST",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "保存（user）",
+      "action": "V1\\\\User\\\\TicketController@save",
+      "file": "routes/user/post__api_v1_user_ticket_save__v1_user_ticketcontroller_save.json"
+    },
+    {
+      "path": "/api/v1/user/ticket/withdraw",
+      "method": "POST",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "user 模块接口",
+      "action": "V1\\\\User\\\\TicketController@withdraw",
+      "file": "routes/user/post__api_v1_user_ticket_withdraw__v1_user_ticketcontroller_withdraw.json"
+    },
+    {
+      "path": "/api/v1/user/transfer",
+      "method": "POST",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "user 模块接口",
+      "action": "V1\\\\User\\\\UserController@transfer",
+      "file": "routes/user/post__api_v1_user_transfer__v1_user_usercontroller_transfer.json"
+    },
+    {
+      "path": "/api/v1/user/unbindTelegram",
+      "method": "GET",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "user 模块接口",
+      "action": "V1\\\\User\\\\UserController@unbindTelegram",
+      "file": "routes/user/get__api_v1_user_unbindtelegram__v1_user_usercontroller_unbindtelegram.json"
+    },
+    {
+      "path": "/api/v1/user/update",
+      "method": "POST",
+      "module": "user",
+      "auth": "user(auth_data)",
+      "description": "更新（user）",
+      "action": "V1\\\\User\\\\UserController@update",
+      "file": "routes/user/post__api_v1_user_update__v1_user_usercontroller_update.json"
+    }
+  ]
+}

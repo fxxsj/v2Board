@@ -1,0 +1,49 @@
+{
+  "path": "/api/v1/user/ticket/reply",
+  "method": "POST",
+  "auth": "user(auth_data)",
+  "description": "回复（user）",
+  "params": [
+    {
+      "name": "ticketId",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "frontend_api_layer",
+        "frontend_confirmed_payload"
+      ],
+      "source": "frontend_api_layer+frontend_payload"
+    },
+    {
+      "name": "message",
+      "type": "unknown",
+      "required": true,
+      "rules": [
+        "required? dynamic",
+        "frontend_confirmed_payload"
+      ],
+      "source": "frontend_api_layer+request->input()"
+    },
+    {
+      "name": "id",
+      "type": "unknown",
+      "required": true,
+      "rules": [
+        "required? dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

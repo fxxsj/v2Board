@@ -1,0 +1,29 @@
+{
+  "path": "/api/v1/server/uniProxy/alive",
+  "method": "ANY",
+  "auth": "client/server token",
+  "description": "节点后端交互接口（uniProxy.alive）",
+  "params": [],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "aliveips",
+      "error",
+      "lastupdateAt"
+    ],
+    "fields": [
+      {
+        "field": "aliveips",
+        "desc": "字段含义需结合节点协议/服务端实现确认"
+      },
+      {
+        "field": "error",
+        "desc": "字段含义需结合节点协议/服务端实现确认"
+      },
+      {
+        "field": "lastupdateAt",
+        "desc": "字段含义需结合节点协议/服务端实现确认"
+      }
+    ]
+  }
+}

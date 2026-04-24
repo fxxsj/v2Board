@@ -1,0 +1,7 @@
+{
+  "path": "/api/v1/server/trojanTidalab/config",
+  "method": "ANY",
+  "auth": "client/server token",
+  "description": "节点后端交互接口（trojanTidalab.config）",
+  "params": []
+}

@@ -1,0 +1,7 @@
+{
+  "path": "/api/v1/guest/telegram/webhook",
+  "method": "POST",
+  "auth": "guest",
+  "description": "guest 模块接口",
+  "params": []
+}

@@ -1,0 +1,33 @@
+{
+  "path": "/api/v1/user/getQuickLoginUrl",
+  "method": "POST",
+  "auth": "user(auth_data)",
+  "description": "登录（user）",
+  "params": [
+    {
+      "name": "redirect",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": \"http://localhost/#/login?verify=229b22faf37140cd5a21d7a1a5163662&redirect=dashboard\"\n}"
+  }
+}

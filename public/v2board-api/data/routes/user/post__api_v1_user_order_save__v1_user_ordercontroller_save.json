@@ -1,0 +1,68 @@
+{
+  "path": "/api/v1/user/order/save",
+  "method": "POST",
+  "auth": "user(auth_data)",
+  "description": "保存（user）",
+  "params": [
+    {
+      "name": "planId",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "frontend_api_layer",
+        "frontend_confirmed_payload"
+      ],
+      "source": "frontend_api_layer+frontend_payload"
+    },
+    {
+      "name": "period",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required",
+        "in:month_price",
+        "frontend_confirmed_payload"
+      ],
+      "source": "frontend_api_layer+FormRequest"
+    },
+    {
+      "name": "plan_id",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "deposit_amount",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "coupon_code",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

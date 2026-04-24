@@ -1,0 +1,23 @@
+{
+  "path": "/api/v1/{secure_path}/stat/getUserLastRank",
+  "method": "GET",
+  "auth": "admin(auth_data)",
+  "description": "获取数据（stat）",
+  "params": [],
+  "response": {
+    "type": "return [..]",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": []\n}"
+  }
+}

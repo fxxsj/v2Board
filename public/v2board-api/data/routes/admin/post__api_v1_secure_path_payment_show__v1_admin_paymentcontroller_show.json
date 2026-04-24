@@ -1,0 +1,29 @@
+{
+  "path": "/api/v1/{secure_path}/payment/show",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "显示/启用（payment）",
+  "params": [
+    {
+      "name": "id",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

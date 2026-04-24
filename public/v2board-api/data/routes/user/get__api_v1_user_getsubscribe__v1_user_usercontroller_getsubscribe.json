@@ -1,0 +1,23 @@
+{
+  "path": "/api/v1/user/getSubscribe",
+  "method": "GET",
+  "auth": "user(auth_data)",
+  "description": "获取数据（user）",
+  "params": [],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": {\n        \"plan_id\": null,\n        \"token\": \"2d025d7c70b2d673d98ac63ebef1c303\",\n        \"expired_at\": 0,\n        \"u\": 0,\n        \"d\": 0,\n        \"transfer_enable\": 0,\n        \"device_limit\": null,\n        \"email\": \"doc_user@local.test\",\n        \"uuid\": \"025937ae-42c2-43ab-b3c0-a88cda452d65\",\n        \"alive_ip\": 0,\n        \"subscribe_url\": \"http://localhost/api/v1/client/subscribe?token=2d025d7c70b2d673d98ac63ebef1c303\",\n        \"reset_day\": null,\n        \"allow_new_period\": 0\n    }\n}"
+  }
+}

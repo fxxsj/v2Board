@@ -1,0 +1,94 @@
+{
+  "path": "/api/v1/{secure_path}/user/fetch",
+  "method": "GET",
+  "auth": "admin(auth_data)",
+  "description": "获取列表/数据（user）",
+  "params": [
+    {
+      "name": "filter.*.key",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required",
+        "in:id"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "filter.*.condition",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required",
+        "in:>"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "filter.*.value",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "current",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "pageSize",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "sort_type",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "sort",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data",
+      "total"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      },
+      {
+        "field": "total",
+        "desc": "总数"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": [\n        {\n            \"id\": 7,\n            \"invite_user_id\": null,\n            \"telegram_id\": null,\n            \"email\": \"doc_reg_1774177474@local.test\",\n            \"password\": \"$2y$12$k8RaYS8sQyh7ANa4gRUY6u1BqItiByujrV0Igjv5gkfkyltCdsP0K\",\n            \"password_algo\": null,\n            \"password_salt\": null,\n            \"balance\": 0,\n            \"discount\": null,\n            \"commission_type\": 0,\n            \"commission_rate\": null,\n            \"commission_balance\": 0,\n            \"t\": 0,\n            \"u\": 0,\n            \"d\": 0,\n            \"transfer_enable\": 0,\n            \"device_limit\": null,\n            \"banned\": 0,\n            \"is_admin\": 0,\n            \"last_login_at\": 1774177475,\n            \"is_staff\": 0,\n            \"last_login_ip\": null,\n            \"uuid\": \"463b45bb-99ac-4132-82e6-4a30a8eb1d7f\",\n            \"group_id\": null,\n            \"plan_id\": null,\n            \"speed_limit\": null,\n            \"auto_renewal\": 0,\n            \"remind_expire\": 1,\n            \"remind_traffic\": 1,\n            \"token\": \"b44cff5dc45a2d6a01b9a18aa5fc793c\",\n            \"expired_at\": 0,\n            \"remarks\": null,\n            \"created_at\": 1774177475,\n            \"updated_at\": 1774177475,\n            \"total_used\": 0,\n            \"alive_ip\": 0,\n            \"ips\": \"\",\n            \"subscribe_url\": \"http://localhost/api/v1/client/subscribe?token=b44cff5dc45a2d6a01b9a18aa5fc793c\"\n        },\n        {\n            \"id\": 6,\n            \"invite_user_id\": null,\n            \"telegram_id\": null,\n            \"email\": \"doc_reg_1774177348@local.test\",\n            \"password\": \"$2y$12$VNCWtWa3qEEpiD2lb0beM.LST817RopyfrmYJ20mUKW4bScYS0Lw6\",\n            \"password_algo\": null,\n            \"password_salt\": null,\n            \"balance\": 0,\n            \"discount\": null,\n            \"commission_type\": 0,\n            \"commission_rate\": null,\n            \"commission_balance\": 0,\n            \"t\": 0,\n            \"u\": 0,\n            \"d\": 0,\n            \"transfer_enable\": 0,\n            \"device_limit\": null,\n            \"banned\": 0,\n            \"is_admin\": 0,\n            \"last_login_at\": 1774177348,\n            \"is_staff\": 0,\n            \"last_login_ip\": null,\n            \"uuid\": \"3db900ee-78c1-4b90-babb-4b62f68e715c\",\n            \"group_id\": null,\n            \"plan_id\": null,\n            \"speed_limit\": null,\n            \"auto_renewal\": 0,\n            \"remind_expire\": 1,\n            \"remind_traffic\": 1,\n            \"token\": \"0b1f57b6b8e08c2db103d2cdaaeb62f5\",\n            \"expired_at\": 0,\n            \"remarks\": null,\n            \"created_at\": 1774177348,\n            \"updated_at\": 1774177348,\n            \"total_used\": 0,\n            \"alive_ip\": 0,\n            \"ips\": \"\",\n            \"subscribe_url\": \"http://localhost/api/v1/client/subscribe?token=0b1f57b6b8e08c2db103d2cdaaeb62f5\"\n        },\n        {\n            \"id\": 5,\n            \"invite_user_id\": null,\n            \"telegram_id\": null,\n            \"email\": \"doc_reg_1774177288@local.test\",\n            \"password\": \"$2y$12$Z0kv6rOepo.U3DqMGNN1TOwkqeV7/NRoVlB6ZWAiTpowNbHNW3sXu\",\n            \"password_algo\": null,\n            \"password_salt\": null,\n            \"balance\": 0,\n            \"discount\": null,\n            \"commission_type\": 0,\n            \"commission_rate\": null,\n            \"commission_balance\": 0,\n            \"t\": 0,\n            \"u\": 0,\n            \"d\": 0,\n            \"transfer_enable\": 0,\n            \"device_limit\": null,\n            \"banned\": 0,\n            \"is_admin\": 0,\n            \"last_login_at\": 1774177288,\n            \"is_staff\": 0,\n            \"last_login_ip\": null,\n            \"uuid\": \"96eab545-4125-49cb-9d3d-3c0e13494692\",\n            \"group_id\": null,\n            \"plan_id\": null,\n            \"speed_limit\": null,\n            \"auto_renewal\": 0,\n            \"remind_expire\": 1,\n            \"remind_traffic\": 1,\n            \"token\": \"b76b4a8be8bb6042ed9e9d0199c3f990\",\n            \"expired_at\": 0,\n            \"remarks\": null,\n            \"created_at\": 1774177288,\n            \"updated_at\": \n...TRUNCATED..."
+  }
+}

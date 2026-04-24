@@ -1,0 +1,39 @@
+{
+  "path": "/api/v1/user/redeemgiftcard",
+  "method": "POST",
+  "auth": "user(auth_data)",
+  "description": "user 模块接口",
+  "params": [
+    {
+      "name": "giftcard",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required"
+      ],
+      "source": "FormRequest"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data",
+      "type",
+      "value"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      },
+      {
+        "field": "type",
+        "desc": "返回类型/支付类型/节点类型（视接口而定）"
+      },
+      {
+        "field": "value",
+        "desc": "字段含义需结合具体业务对象确认"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "path": "/api/v1/server/shadowsocksTidalab/submit",
+  "method": "ANY",
+  "auth": "client/server token",
+  "description": "节点后端交互接口（shadowsocksTidalab.submit）",
+  "params": [],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "msg",
+      "ret"
+    ],
+    "fields": [
+      {
+        "field": "msg",
+        "desc": "字段含义需结合节点协议/服务端实现确认"
+      },
+      {
+        "field": "ret",
+        "desc": "字段含义需结合节点协议/服务端实现确认"
+      }
+    ]
+  }
+}

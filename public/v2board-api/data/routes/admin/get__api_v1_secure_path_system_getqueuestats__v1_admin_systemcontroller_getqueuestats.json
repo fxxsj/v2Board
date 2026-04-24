@@ -1,0 +1,73 @@
+{
+  "path": "/api/v1/{secure_path}/system/getQueueStats",
+  "method": "GET",
+  "auth": "admin(auth_data)",
+  "description": "获取数据（system）",
+  "params": [],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data",
+      "failedJobs",
+      "jobsPerMinute",
+      "pausedMasters",
+      "periods",
+      "processes",
+      "queueWithMaxRuntime",
+      "queueWithMaxThroughput",
+      "recentJobs",
+      "status",
+      "wait"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      },
+      {
+        "field": "failedJobs",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "jobsPerMinute",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "pausedMasters",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "periods",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "processes",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "queueWithMaxRuntime",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "queueWithMaxThroughput",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "recentJobs",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "status",
+        "desc": "状态值"
+      },
+      {
+        "field": "wait",
+        "desc": "字段含义需结合具体业务对象确认"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": {\n        \"failedJobs\": 0,\n        \"jobsPerMinute\": 0,\n        \"pausedMasters\": 0,\n        \"periods\": {\n            \"failedJobs\": 10080,\n            \"recentJobs\": 60\n        },\n        \"processes\": 0,\n        \"queueWithMaxRuntime\": null,\n        \"queueWithMaxThroughput\": null,\n        \"recentJobs\": 0,\n        \"status\": false,\n        \"wait\": []\n    }\n}"
+  }
+}

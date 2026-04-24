@@ -1,0 +1,47 @@
+{
+  "path": "/api/v1/{secure_path}/system/getSystemLog",
+  "method": "GET",
+  "auth": "admin(auth_data)",
+  "description": "获取数据（system）",
+  "params": [
+    {
+      "name": "current",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "page_size",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data",
+      "total"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      },
+      {
+        "field": "total",
+        "desc": "总数"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": [\n        {\n            \"id\": 42,\n            \"title\": \"POST api/v1/2981bd12/order/detail\",\n            \"level\": \"INFO\",\n            \"host\": \"http://localhost\",\n            \"uri\": \"/api/v1/2981bd12/order/detail\",\n            \"method\": \"POST\",\n            \"data\": \"{\\\"user\\\":{\\\"id\\\":3,\\\"email\\\":\\\"doc_admin@local.test\\\",\\\"is_admin\\\":1,\\\"is_staff\\\":1}}\",\n            \"ip\": \"127.0.0.1\",\n            \"context\": \"[]\",\n            \"created_at\": 1774177475,\n            \"updated_at\": 1774177475\n        },\n        {\n            \"id\": 43,\n            \"title\": \"POST api/v1/2981bd12/payment/getPaymentForm\",\n            \"level\": \"INFO\",\n            \"host\": \"http://localhost\",\n            \"uri\": \"/api/v1/2981bd12/payment/getPaymentForm\",\n            \"method\": \"POST\",\n            \"data\": \"{\\\"user\\\":{\\\"id\\\":3,\\\"email\\\":\\\"doc_admin@local.test\\\",\\\"is_admin\\\":1,\\\"is_staff\\\":1}}\",\n            \"ip\": \"127.0.0.1\",\n            \"context\": \"[]\",\n            \"created_at\": 1774177475,\n            \"updated_at\": 1774177475\n        },\n        {\n            \"id\": 44,\n            \"title\": \"Method App\\\\Http\\\\Controllers\\\\V1\\\\Admin\\\\StatController::getRanking does not exist.\",\n            \"level\": \"ERROR\",\n            \"host\": \"http://localhost\",\n            \"uri\": \"/api/v1/2981bd12/stat/getRanking\",\n            \"method\": \"GET\",\n            \"data\": \"{\\\"user\\\":{\\\"id\\\":3,\\\"email\\\":\\\"doc_admin@local.test\\\",\\\"is_admin\\\":1,\\\"is_staff\\\":1}}\",\n            \"ip\": \"127.0.0.1\",\n            \"context\": \"{\\\"exception\\\":{\\\"\\\\u0000*\\\\u0000message\\\":\\\"Method App\\\\\\\\Http\\\\\\\\Controllers\\\\\\\\V1\\\\\\\\Admin\\\\\\\\StatController::getRanking does not exist.\\\",\\\"\\\\u0000Exception\\\\u0000string\\\":\\\"\\\",\\\"\\\\u0000*\\\\u0000code\\\":0,\\\"\\\\u0000*\\\\u0000file\\\":\\\"\\\\/home\\\\/bruce\\\\/projects\\\\/v2board\\\\/vendor\\\\/laravel\\\\/framework\\\\/src\\\\/Illuminate\\\\/Routing\\\\/Controller.php\\\",\\\"\\\\u0000*\\\\u0000line\\\":68,\\\"\\\\u0000Exception\\\\u0000trace\\\":[{\\\"file\\\":\\\"\\\\/home\\\\/bruce\\\\/projects\\\\/v2board\\\\/vendor\\\\/laravel\\\\/framework\\\\/src\\\\/Illuminate\\\\/Routing\\\\/Controller.php\\\",\\\"line\\\":54,\\\"function\\\":\\\"__call\\\",\\\"class\\\":\\\"Illuminate\\\\\\\\Routing\\\\\\\\Controller\\\",\\\"type\\\":\\\"->\\\"},{\\\"file\\\":\\\"\\\\/home\\\\/bruce\\\\/projects\\\\/v2board\\\\/vendor\\\\/laravel\\\\/framework\\\\/src\\\\/Illuminate\\\\/Routing\\\\/ControllerDispatcher.php\\\",\\\"line\\\":45,\\\"function\\\":\\\"callAction\\\",\\\"class\\\":\\\"Illuminate\\\\\\\\Routing\\\\\\\\Controller\\\",\\\"type\\\":\\\"->\\\"},{\\\"file\\\":\\\"\\\\/home\\\\/bruce\\\\/projects\\\\/v2board\\\\/vendor\\\\/laravel\\\\/framework\\\\/src\\\\/Illuminate\\\\/Routing\\\\/Route.php\\\",\\\"line\\\":261,\\\"function\\\":\\\"dispatch\\\",\\\"class\\\":\\\"Illuminate\\\\\\\\Routing\\\\\\\\ControllerDispatcher\\\",\\\"type\\\":\\\"->\\\"},{\\\"file\\\":\\\"\\\\/home\\\\/bruce\\\\/projects\\\\/v2board\\\\/vendor\\\\/laravel\\\\/framework\\\\/src\\\\/Illuminate\\\\/Routing\\\\/Route.php\\\",\\\"line\\\":205,\\\"function\\\":\\\"runController\\\",\\\"class\\\":\\\"Illuminate\\\\\\\\Routing\\\\\\\\Route\\\",\\\"type\\\":\\\"->\\\"},{\\\"file\\\":\\\"\\\\/home\\\\/bruce\\\\/projects\\\\/v2board\\\\/vendor\\\\/laravel\\\\/framework\\\\/src\\\\/Illuminate\\\\/Routing\\\\/Router.php\\\",\\\"line\\\":721,\\\"function\\\":\\\"run\\\",\\\"class\\\":\\\"Illuminate\\\\\\\\Routing\\\\\\\\Route\\\",\\\"type\\\":\\\"->\\\"},{\\\"file\\\":\\\"\\\\/home\\\\/bruce\\\\/projects\\\\/v2board\\\\/vendor\\\\/laravel\\\\/framework\\\\/src\\\\/Illuminate\\\\/Pipeline\\\\/Pipeline.php\\\",\\\"line\\\":128,\\\"function\\\":\\\"{closure:Illuminate\\\\\\\\Routing\\\\\\\\Router::runRouteWithinStack():719}\\\",\\\"class\\\":\\\"Illuminate\\\\\\\\Routing\\\\\\\\Router\\\",\\\"type\\\":\\\"->\\\"},{\\\"file\\\":\\\"\\\\/home\\\\/bruce\\\\/projects\\\\/v2board\\\\/app\\\\/Http\\\\/Middleware\\\\/RequestLog.php\\\",\\\"line\\\":22,\\\"function\\\":\\\"{closure:Illuminate\\\\\\\\Pipeline\\\\\\\\Pipeline::prepareDestination():126}\\\",\\\"class\\\":\\\"Illuminate\\\\\\\\Pipeline\\\\\\\\Pipeline\\\",\\\"type\\\":\\\"->\\\"},{\\\"file\\\":\\\"\\\\/home\\\\/bruce\\\\/projects\\\\/v2board\\\\/vendor\\\\/laravel\\\\/framework\\\\/src\\\\/Illuminate\\\\/Pipeline\\\\/Pipeline.php\\\",\\\"line\\\":167,\\\"function\\\":\\\"handle\\\",\\\"class\\\":\\\"App\\\\\\\\Http\\\\\\\\Middleware\\\\\\\\RequestLog\\\",\\\"type\\\":\\\"->\\\"},{\\\"file\\\":\\\"\\\\/home\\\\/bruce\\\\/projects\\\\/v2board\\\\/app\\\\/Http\\\\/Middleware\\\\/Admin.php\\\",\\\"line\\\":27,\\\"function\\\":\\\"{closure:{closure:Illuminate\\\\\\\\Pipe\n...TRUNCATED..."
+  }
+}

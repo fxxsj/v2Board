@@ -1,0 +1,33 @@
+{
+  "path": "/api/v1/{secure_path}/theme/getThemes",
+  "method": "GET",
+  "auth": "admin(auth_data)",
+  "description": "获取数据（theme）",
+  "params": [],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "active",
+      "data",
+      "themes"
+    ],
+    "fields": [
+      {
+        "field": "active",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      },
+      {
+        "field": "themes",
+        "desc": "字段含义需结合具体业务对象确认"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": {\n        \"themes\": {\n            \"default\": {\n                \"name\": \"default\",\n                \"description\": \"默认主题\",\n                \"version\": \"1.7.5\",\n                \"images\": \"https://images.unsplash.com/photo-1515405295579-ba7b45403062?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2160&q=80\",\n                \"configs\": [\n                    {\n                        \"label\": \"主题色\",\n                        \"placeholder\": \"请选择主题颜色\",\n                        \"field_name\": \"theme_color\",\n                        \"field_type\": \"select\",\n                        \"select_options\": {\n                            \"default\": \"默认(蓝色)\",\n                            \"green\": \"奶绿色\",\n                            \"black\": \"黑色\",\n                            \"darkblue\": \"暗蓝色\"\n                        },\n                        \"default_value\": \"default\"\n                    },\n                    {\n                        \"label\": \"背景\",\n                        \"placeholder\": \"请输入背景图片URL\",\n                        \"field_name\": \"background_url\",\n                        \"field_type\": \"input\"\n                    },\n                    {\n                        \"label\": \"边栏风格\",\n                        \"placeholder\": \"请选择边栏风格\",\n                        \"field_name\": \"theme_sidebar\",\n                        \"field_type\": \"select\",\n                        \"select_options\": {\n                            \"light\": \"亮\",\n                            \"dark\": \"暗\"\n                        },\n                        \"default_value\": \"light\"\n                    },\n                    {\n                        \"label\": \"顶部风格\",\n                        \"placeholder\": \"请选择顶部风格\",\n                        \"field_name\": \"theme_header\",\n                        \"field_type\": \"select\",\n                        \"select_options\": {\n                            \"light\": \"亮\",\n                            \"dark\": \"暗\"\n                        },\n                        \"default_value\": \"dark\"\n                    },\n                    {\n                        \"label\": \"自定义页脚HTML\",\n                        \"placeholder\": \"可以实现客服JS代码的加入等\",\n                        \"field_name\": \"custom_html\",\n                        \"field_type\": \"textarea\"\n                    }\n                ]\n            }\n        },\n        \"active\": \"v2board\"\n    }\n}"
+  }
+}

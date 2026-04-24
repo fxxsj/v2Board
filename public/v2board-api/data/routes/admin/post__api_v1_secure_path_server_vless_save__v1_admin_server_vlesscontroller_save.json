@@ -1,0 +1,200 @@
+{
+  "path": "/api/v1/{secure_path}/server/vless/save",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "保存（save）",
+  "params": [
+    {
+      "name": "group_id",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "route_id",
+      "type": "array",
+      "required": false,
+      "rules": [
+        "nullable",
+        "array"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer",
+      "required": false,
+      "rules": [
+        "nullable",
+        "integer"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "host",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "port",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "server_port",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "tls",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required",
+        "in:0,1,2"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "tls_settings",
+      "type": "array",
+      "required": false,
+      "rules": [
+        "nullable",
+        "array"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "flow",
+      "type": "string",
+      "required": false,
+      "rules": [
+        "nullable",
+        "in:xtls-rprx-vision"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "network",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "network_settings",
+      "type": "array",
+      "required": false,
+      "rules": [
+        "nullable",
+        "array"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "encryption",
+      "type": "string",
+      "required": false,
+      "rules": [
+        "nullable"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "encryption_settings",
+      "type": "array",
+      "required": false,
+      "rules": [
+        "nullable",
+        "array"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "tags",
+      "type": "array",
+      "required": false,
+      "rules": [
+        "nullable",
+        "array"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "rate",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "show",
+      "type": "string",
+      "required": false,
+      "rules": [
+        "nullable",
+        "in:0,1"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "sort",
+      "type": "string",
+      "required": false,
+      "rules": [
+        "nullable"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "id",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

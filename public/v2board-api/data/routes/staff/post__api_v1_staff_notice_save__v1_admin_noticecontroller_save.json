@@ -1,0 +1,67 @@
+{
+  "path": "/api/v1/staff/notice/save",
+  "method": "POST",
+  "auth": "staff(auth_data)",
+  "description": "保存（staff）",
+  "params": [
+    {
+      "name": "title",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "content",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "img_url",
+      "type": "string",
+      "required": false,
+      "rules": [
+        "nullable",
+        "url"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "tags",
+      "type": "array",
+      "required": false,
+      "rules": [
+        "nullable",
+        "array"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "id",
+      "type": "unknown",
+      "required": true,
+      "rules": [
+        "required? dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

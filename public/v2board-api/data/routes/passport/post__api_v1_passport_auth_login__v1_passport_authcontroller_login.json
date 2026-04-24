@@ -1,0 +1,46 @@
+{
+  "path": "/api/v1/passport/auth/login",
+  "method": "POST",
+  "auth": "guest",
+  "description": "登录（passport）",
+  "params": [
+    {
+      "name": "email",
+      "type": "email",
+      "required": true,
+      "rules": [
+        "required",
+        "email:strict",
+        "frontend_confirmed_payload"
+      ],
+      "source": "frontend_api_layer+FormRequest"
+    },
+    {
+      "name": "password",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required",
+        "min:8",
+        "frontend_confirmed_payload"
+      ],
+      "source": "frontend_api_layer+FormRequest"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": {\n        \"token\": \"2d025d7c70b2d673d98ac63ebef1c303\",\n        \"is_admin\": 0,\n        \"auth_data\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwic2Vzc2lvbiI6IjE0NDkxYTQ4N2U3ZWIzMjg2NzIzMzYxYzJmNDg1NjY1In0.geCqYkvwHxAgZHIhjOKkfH9NaMphugp7n-1uHoLMQq4\"\n    }\n}"
+  }
+}

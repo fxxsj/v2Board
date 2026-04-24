@@ -1,0 +1,30 @@
+{
+  "path": "/api/v1/{secure_path}/knowledge/sort",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "排序（knowledge）",
+  "params": [
+    {
+      "name": "knowledge_ids",
+      "type": "array",
+      "required": true,
+      "rules": [
+        "required",
+        "array"
+      ],
+      "source": "FormRequest"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "path": "/api/v1/{secure_path}/server/route/drop",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "删除/移除（server）",
+  "params": [
+    {
+      "name": "id",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "return [..]",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

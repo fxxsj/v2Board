@@ -1,0 +1,41 @@
+{
+  "path": "/api/v1/user/transfer",
+  "method": "POST",
+  "auth": "user(auth_data)",
+  "description": "user 模块接口",
+  "params": [
+    {
+      "name": "amount",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "frontend_api_layer",
+        "frontend_confirmed_payload"
+      ],
+      "source": "frontend_api_layer+frontend_payload"
+    },
+    {
+      "name": "transfer_amount",
+      "type": "integer",
+      "required": true,
+      "rules": [
+        "required",
+        "integer",
+        "min:1"
+      ],
+      "source": "FormRequest"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

@@ -9,6 +9,12 @@
 
 define('LARAVEL_START', microtime(true));
 
+$requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+if ($requestPath === '/v2board-api.html') {
+    header('Location: /v2board-api/', true, 302);
+    exit;
+}
+
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader

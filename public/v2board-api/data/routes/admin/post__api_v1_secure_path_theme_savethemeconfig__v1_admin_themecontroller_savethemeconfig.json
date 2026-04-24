@@ -1,0 +1,39 @@
+{
+  "path": "/api/v1/{secure_path}/theme/saveThemeConfig",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "获取配置（theme）",
+  "params": [
+    {
+      "name": "name",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required",
+        "in:"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "config",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required"
+      ],
+      "source": "validate()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

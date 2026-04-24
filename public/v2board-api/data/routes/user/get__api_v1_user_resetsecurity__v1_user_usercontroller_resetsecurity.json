@@ -1,0 +1,23 @@
+{
+  "path": "/api/v1/user/resetSecurity",
+  "method": "GET",
+  "auth": "user(auth_data)",
+  "description": "user 模块接口",
+  "params": [],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": \"http://localhost/api/v1/client/subscribe?token=46610eadbec5fe159658ce32ddc6ceeb\"\n}"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "path": "/api/v1/user/invite/details",
+  "method": "GET",
+  "auth": "user(auth_data)",
+  "description": "获取详情（user）",
+  "params": [
+    {
+      "name": "current",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "page_size",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data",
+      "total"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      },
+      {
+        "field": "total",
+        "desc": "总数"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": [],\n    \"total\": 0\n}"
+  }
+}

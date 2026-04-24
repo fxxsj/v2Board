@@ -1,0 +1,29 @@
+{
+  "path": "/api/v1/passport/comm/pv",
+  "method": "POST",
+  "auth": "guest",
+  "description": "passport 模块接口",
+  "params": [
+    {
+      "name": "invite_code",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

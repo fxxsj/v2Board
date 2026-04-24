@@ -1,0 +1,193 @@
+{
+  "path": "/api/v1/{secure_path}/server/vmess/save",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "保存（save）",
+  "params": [
+    {
+      "name": "show",
+      "type": "string",
+      "required": false,
+      "rules": [
+        ""
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "group_id",
+      "type": "array",
+      "required": true,
+      "rules": [
+        "required",
+        "array"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "route_id",
+      "type": "array",
+      "required": false,
+      "rules": [
+        "nullable",
+        "array"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer",
+      "required": false,
+      "rules": [
+        "nullable",
+        "integer"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "host",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "port",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "server_port",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "tls",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "tags",
+      "type": "array",
+      "required": false,
+      "rules": [
+        "nullable",
+        "array"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "rate",
+      "type": "number",
+      "required": true,
+      "rules": [
+        "required",
+        "numeric"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "network",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required",
+        "in:tcp"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "networkSettings",
+      "type": "array",
+      "required": false,
+      "rules": [
+        "nullable",
+        "array"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "networkSettings.security",
+      "type": "string",
+      "required": false,
+      "rules": [
+        "nullable",
+        "in:auto"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "ruleSettings",
+      "type": "array",
+      "required": false,
+      "rules": [
+        "nullable",
+        "array"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "tlsSettings",
+      "type": "array",
+      "required": false,
+      "rules": [
+        "nullable",
+        "array"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "dnsSettings",
+      "type": "array",
+      "required": false,
+      "rules": [
+        "nullable",
+        "array"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "id",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

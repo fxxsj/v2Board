@@ -1,0 +1,33 @@
+{
+  "path": "/api/v1/client/app/getVersion",
+  "method": "GET",
+  "auth": "client/server token",
+  "description": "获取数据（client）",
+  "params": [],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data",
+      "download_url",
+      "version"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      },
+      {
+        "field": "download_url",
+        "desc": "下载地址"
+      },
+      {
+        "field": "version",
+        "desc": "版本号"
+      }
+    ]
+  },
+  "sample": {
+    "status": 403,
+    "body": "{\n    \"message\": \"token is null\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\HttpException\",\n    \"file\": \"vendor/laravel/framework/src/Illuminate/Foundation/Application.php\",\n    \"line\": 1134,\n    \"trace\": [\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Foundation/helpers.php\",\n            \"line\": 44,\n            \"function\": \"abort\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"app/Http/Middleware/Client.php\",\n            \"line\": 23,\n            \"function\": \"abort\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"App\\\\Http\\\\Middleware\\\\Client\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():142}:143}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"app/Http/Middleware/Language.php\",\n            \"line\": 15,\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():142}:143}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"App\\\\Http\\\\Middleware\\\\Language\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"app/Http/Middleware/ForceJson.php\",\n            \"line\": 20,\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():142}:143}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"App\\\\Http\\\\Middleware\\\\ForceJson\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():142}:143}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 719,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 698,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 662,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/l\n...TRUNCATED..."
+  }
+}

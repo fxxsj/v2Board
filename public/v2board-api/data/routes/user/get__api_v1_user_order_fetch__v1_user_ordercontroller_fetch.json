@@ -1,0 +1,33 @@
+{
+  "path": "/api/v1/user/order/fetch",
+  "method": "GET",
+  "auth": "user(auth_data)",
+  "description": "获取列表/数据（user）",
+  "params": [
+    {
+      "name": "status",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": []\n}"
+  }
+}

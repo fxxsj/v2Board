@@ -1,0 +1,38 @@
+{
+  "path": "/api/v1/{secure_path}/system/getSystemStatus",
+  "method": "GET",
+  "auth": "admin(auth_data)",
+  "description": "获取数据（system）",
+  "params": [],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data",
+      "horizon",
+      "schedule",
+      "schedule_last_runtime"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      },
+      {
+        "field": "horizon",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "schedule",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "schedule_last_runtime",
+        "desc": "字段含义需结合具体业务对象确认"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": {\n        \"schedule\": false,\n        \"horizon\": false,\n        \"schedule_last_runtime\": \"1773904210\"\n    }\n}"
+  }
+}

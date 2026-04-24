@@ -1,0 +1,71 @@
+{
+  "path": "/api/v1/passport/auth/register",
+  "method": "POST",
+  "auth": "guest",
+  "description": "注册（passport）",
+  "params": [
+    {
+      "name": "email",
+      "type": "email",
+      "required": true,
+      "rules": [
+        "required",
+        "email:strict"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "password",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required",
+        "min:8"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "recaptcha_data",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "invite_code",
+      "type": "unknown",
+      "required": true,
+      "rules": [
+        "required? dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "email_code",
+      "type": "unknown",
+      "required": true,
+      "rules": [
+        "required? dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response()->json",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": {\n        \"token\": \"b44cff5dc45a2d6a01b9a18aa5fc793c\",\n        \"is_admin\": null,\n        \"auth_data\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Nywic2Vzc2lvbiI6IjYwODcyNWI2ZjdlYzczN2YxMGI0MjQ1MGY0ZWI2NjhjIn0.a3R4Jj4wfzhXaD5V2Wo_7LyIZHcIo9b7-w1fhI0pIlo\"\n    }\n}"
+  }
+}

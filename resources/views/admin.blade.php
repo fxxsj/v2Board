@@ -2,9 +2,15 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="/assets/admin/components.chunk.css?v={{$version}}">
-    <link rel="stylesheet" href="/assets/admin/umi.css?v={{$version}}">
-    <link rel="stylesheet" href="/assets/admin/custom.css?v={{$version}}">
+    @php
+        $adminAssetVersion = static function (string $asset) use ($version) {
+            $path = public_path("assets/admin/{$asset}");
+            return is_file($path) ? filemtime($path) : $version;
+        };
+    @endphp
+    <link rel="stylesheet" href="/assets/admin/components.chunk.css?v={{$adminAssetVersion('components.chunk.css')}}">
+    <link rel="stylesheet" href="/assets/admin/umi.css?v={{$adminAssetVersion('umi.css')}}">
+    <link rel="stylesheet" href="/assets/admin/custom.css?v={{$adminAssetVersion('custom.css')}}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
     <title>{{$title}}</title>
@@ -28,9 +34,9 @@
 
 <body>
 <div id="root"></div>
-<script src="/assets/admin/vendors.async.js?v={{$version}}"></script>
-<script src="/assets/admin/components.async.js?v={{$version}}"></script>
-<script src="/assets/admin/umi.js?v={{$version}}"></script>
+<script src="/assets/admin/vendors.async.js?v={{$adminAssetVersion('vendors.async.js')}}"></script>
+<script src="/assets/admin/components.async.js?v={{$adminAssetVersion('components.async.js')}}"></script>
+<script src="/assets/admin/umi.js?v={{$adminAssetVersion('umi.js')}}"></script>
 </body>
 
 </html>

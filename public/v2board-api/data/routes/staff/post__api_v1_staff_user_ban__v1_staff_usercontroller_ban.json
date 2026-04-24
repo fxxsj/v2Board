@@ -1,0 +1,38 @@
+{
+  "path": "/api/v1/staff/user/ban",
+  "method": "POST",
+  "auth": "staff(auth_data)",
+  "description": "封禁（staff）",
+  "params": [
+    {
+      "name": "sort_type",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "sort",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

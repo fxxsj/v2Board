@@ -1,0 +1,19 @@
+{
+  "path": "/api/v1/server/uniProxy/alivelist",
+  "method": "ANY",
+  "auth": "client/server token",
+  "description": "节点后端交互接口（uniProxy.alivelist）",
+  "params": [],
+  "response": {
+    "type": "response()->json",
+    "keys": [
+      "alive"
+    ],
+    "fields": [
+      {
+        "field": "alive",
+        "desc": "字段含义需结合节点协议/服务端实现确认"
+      }
+    ]
+  }
+}

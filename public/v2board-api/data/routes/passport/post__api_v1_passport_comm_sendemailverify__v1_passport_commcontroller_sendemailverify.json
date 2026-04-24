@@ -1,0 +1,48 @@
+{
+  "path": "/api/v1/passport/comm/sendEmailVerify",
+  "method": "POST",
+  "auth": "guest",
+  "description": "passport 模块接口",
+  "params": [
+    {
+      "name": "email",
+      "type": "email",
+      "required": true,
+      "rules": [
+        "required",
+        "email:strict"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "recaptcha_data",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "isforget",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

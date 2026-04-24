@@ -1,0 +1,142 @@
+{
+  "path": "/api/v1/{secure_path}/config/fetch",
+  "method": "GET",
+  "auth": "admin(auth_data)",
+  "description": "获取后台系统配置（按分组返回站点、订阅、安全、邮件、前端等设置），用于管理后台配置页初始化。",
+  "params": [
+    {
+      "name": "无",
+      "type": "-",
+      "required": false,
+      "desc": "该接口通常无需请求参数，管理员鉴权后直接返回当前配置。",
+      "source": "controller"
+    }
+  ],
+  "response": {
+    "type": "json",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "type": "object",
+        "desc": "配置对象集合，按分组返回多个配置块。"
+      },
+      {
+        "field": "data.site",
+        "type": "object",
+        "desc": "站点基础配置，如站点名称、描述、URL、Logo、注册链接策略等。"
+      },
+      {
+        "field": "data.subscribe",
+        "type": "object",
+        "desc": "订阅与流量重置配置，如重置方式、展示策略、事件动作等。"
+      },
+      {
+        "field": "data.safe",
+        "type": "object",
+        "desc": "安全配置，如安全模式、验证码、注册限制、密码错误限制等。"
+      },
+      {
+        "field": "data.invite",
+        "type": "object",
+        "desc": "邀请与佣金配置，如返佣比例、提现方式、分销层级等。"
+      },
+      {
+        "field": "data.server",
+        "type": "object",
+        "desc": "节点与服务端交互配置，如 server_api_url、token、拉取/推送间隔、流量阈值等。"
+      },
+      {
+        "field": "data.email",
+        "type": "object",
+        "desc": "SMTP 邮件配置，如 host、port、encryption、username、password、from address、template。"
+      },
+      {
+        "field": "data.telegram",
+        "type": "object",
+        "desc": "Telegram 机器人与讨论组配置，如 bot token、开关、讨论组链接。"
+      },
+      {
+        "field": "data.frontend",
+        "type": "object",
+        "desc": "前端展示配置，如主题色、背景图等。"
+      },
+      {
+        "field": "data.app",
+        "type": "object",
+        "desc": "客户端版本与下载地址配置，如 Windows/macOS/Android version 与 download_url。"
+      },
+      {
+        "field": "data.ticket",
+        "type": "object",
+        "desc": "工单配置，如 ticket_status。"
+      },
+      {
+        "field": "data.deposit",
+        "type": "object",
+        "desc": "充值赠送配置，如 deposit_bounus。"
+      }
+    ]
+  },
+  "examples": {
+    "response": {
+      "data": {
+        "site": {
+          "app_name": "string",
+          "app_url": "string",
+          "logo": "string"
+        },
+        "subscribe": {
+          "reset_traffic_method": "number",
+          "show_subscribe_method": "number"
+        },
+        "safe": {
+          "secure_path": "string",
+          "safe_mode_enable": "0|1"
+        },
+        "invite": {
+          "invite_commission": "number",
+          "commission_withdraw_method": [
+            "string"
+          ]
+        },
+        "server": {
+          "server_api_url": "string",
+          "server_pull_interval": "number",
+          "server_push_interval": "number"
+        },
+        "email": {
+          "email_host": "string",
+          "email_port": "number",
+          "email_encryption": "string"
+        },
+        "telegram": {
+          "telegram_bot_token": "string",
+          "telegram_bot_enable": "0|1"
+        },
+        "frontend": {
+          "frontend_theme_color": "string",
+          "frontend_background_url": "string"
+        },
+        "app": {
+          "windows_version": "string",
+          "windows_download_url": "string"
+        },
+        "ticket": {
+          "ticket_status": "0|1|2"
+        },
+        "deposit": {
+          "deposit_bounus": [
+            "string"
+          ]
+        }
+      }
+    }
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": {\n        \"ticket\": {\n            \"ticket_status\": 0\n        },\n        \"deposit\": {\n            \"deposit_bounus\": []\n        },\n        \"invite\": {\n            \"invite_force\": 0,\n            \"invite_commission\": 10,\n            \"invite_gen_limit\": 5,\n            \"invite_never_expire\": 0,\n            \"commission_first_time_enable\": 1,\n            \"commission_auto_check_enable\": 1,\n            \"commission_withdraw_limit\": 100,\n            \"commission_withdraw_method\": [\n                \"支付宝\",\n                \"USDT\",\n                \"Paypal\"\n            ],\n            \"withdraw_close_enable\": 0,\n            \"commission_distribution_enable\": 0,\n            \"commission_distribution_l1\": null,\n            \"commission_distribution_l2\": null,\n            \"commission_distribution_l3\": null\n        },\n        \"site\": {\n            \"logo\": null,\n            \"force_https\": 0,\n            \"stop_register\": 0,\n            \"app_name\": \"V2Board\",\n            \"app_description\": \"V2Board is best!\",\n            \"app_url\": null,\n            \"subscribe_url\": null,\n            \"subscribe_path\": null,\n            \"try_out_plan_id\": 0,\n            \"try_out_hour\": 1,\n            \"tos_url\": null,\n            \"currency\": \"CNY\",\n            \"currency_symbol\": \"¥\"\n        },\n        \"subscribe\": {\n            \"plan_change_enable\": 1,\n            \"reset_traffic_method\": 0,\n            \"surplus_enable\": 1,\n            \"allow_new_period\": 0,\n            \"new_order_event_id\": 0,\n            \"renew_order_event_id\": 0,\n            \"change_order_event_id\": 0,\n            \"show_info_to_server_enable\": 0,\n            \"show_subscribe_method\": 0,\n            \"show_subscribe_expire\": 5\n        },\n        \"frontend\": {\n            \"frontend_theme\": \"v2board\",\n            \"frontend_theme_sidebar\": \"light\",\n            \"frontend_theme_header\": \"dark\",\n            \"frontend_theme_color\": \"default\",\n            \"frontend_background_url\": null\n        },\n        \"server\": {\n            \"server_api_url\": null,\n            \"server_token\": null,\n            \"server_pull_interval\": 60,\n            \"server_push_interval\": 60,\n            \"server_node_report_min_traffic\": 0,\n            \"server_device_online_min_traffic\": 0,\n            \"device_limit_mode\": 0\n        },\n        \"email\": {\n            \"email_template\": \"default\",\n            \"email_host\": null,\n            \"email_port\": null,\n            \"email_username\": null,\n            \"email_password\": null,\n            \"email_encryption\": null,\n            \"email_from_address\": null\n        },\n        \"telegram\": {\n            \"telegram_bot_enable\": 0,\n            \"telegram_bot_token\": null,\n            \"telegram_discuss_link\": null\n        },\n        \"app\": {\n            \"windows_version\": null,\n            \"windows_download_url\": null,\n            \"macos_version\": null,\n            \"macos_download_url\": null,\n            \"android_version\": null,\n            \"android_download_url\": null\n        },\n        \"safe\": {\n            \"email_verify\": 0,\n            \"safe_mode_enable\": 0,\n            \"secure_path\": \"2981bd12\",\n            \"email_whitelist_enable\": 0,\n            \"email_whitelist_suffix\": [\n                \"gmail.com\",\n                \"qq.com\",\n                \"163.com\",\n                \"yahoo.com\",\n                \"sina.com\",\n                \"126.com\",\n                \"outlook.com\",\n                \"yeah.net\",\n                \"foxmail.com\"\n            ],\n            \"email_gmail_limit_enable\": 0,\n            \"recaptcha_enable\": 0,\n            \"recaptcha_key\": null,\n            \"recaptcha_site_key\": null,\n            \"register_limit_by_ip_enable\": 0,\n            \"register_limit_count\": 3,\n            \"register_limit_expire\": 60,\n            \"password_limit_enable\": 1,\n            \"password_limit_count\": 5,\n            \"password_limit_expire\": 60\n        }\n    }\n}"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "path": "/api/v1/user/order/cancel",
+  "method": "POST",
+  "auth": "user(auth_data)",
+  "description": "取消（user）",
+  "params": [
+    {
+      "name": "tradeNo",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "frontend_api_layer",
+        "frontend_confirmed_payload"
+      ],
+      "source": "frontend_api_layer+frontend_payload"
+    },
+    {
+      "name": "trade_no",
+      "type": "unknown",
+      "required": true,
+      "rules": [
+        "required? dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

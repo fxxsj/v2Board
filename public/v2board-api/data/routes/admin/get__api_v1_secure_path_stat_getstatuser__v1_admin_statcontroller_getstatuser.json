@@ -1,0 +1,57 @@
+{
+  "path": "/api/v1/{secure_path}/stat/getStatUser",
+  "method": "GET",
+  "auth": "admin(auth_data)",
+  "description": "获取数据（stat）",
+  "params": [
+    {
+      "name": "user_id",
+      "type": "integer",
+      "required": true,
+      "rules": [
+        "required",
+        "integer"
+      ],
+      "source": "validate()"
+    },
+    {
+      "name": "current",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "pageSize",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "return [..]",
+    "keys": [
+      "data",
+      "total"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      },
+      {
+        "field": "total",
+        "desc": "总数"
+      }
+    ]
+  },
+  "sample": {
+    "status": 422,
+    "body": "{\n    \"message\": \"The given data was invalid.\",\n    \"errors\": {\n        \"user_id\": [\n            \"validation.required\"\n        ]\n    }\n}"
+  }
+}

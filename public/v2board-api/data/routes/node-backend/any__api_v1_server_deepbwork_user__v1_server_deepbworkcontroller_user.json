@@ -1,0 +1,24 @@
+{
+  "path": "/api/v1/server/deepbwork/user",
+  "method": "ANY",
+  "auth": "client/server token",
+  "description": "节点后端交互接口（deepbwork.user）",
+  "params": [],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data",
+      "msg"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "字段含义需结合节点协议/服务端实现确认"
+      },
+      {
+        "field": "msg",
+        "desc": "字段含义需结合节点协议/服务端实现确认"
+      }
+    ]
+  }
+}

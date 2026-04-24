@@ -1,0 +1,34 @@
+{
+  "path": "/api/v1/{secure_path}/theme/getThemeConfig",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "获取配置（theme）",
+  "params": [
+    {
+      "name": "name",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required",
+        "in:"
+      ],
+      "source": "validate()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  },
+  "sample": {
+    "status": 422,
+    "body": "{\n    \"message\": \"The given data was invalid.\",\n    \"errors\": {\n        \"name\": [\n            \"validation.required\"\n        ]\n    }\n}"
+  }
+}

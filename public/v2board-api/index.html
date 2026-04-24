@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>v2Board API 文档</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header>
+    <h1>v2Board API 文档</h1>
+    <div class="sub">
+      按模块拆分加载。API 共 <b id="totalCount">-</b> 条；另有 4 条 web 路由未计入。Admin 路由使用 <code>{secure_path}</code> 占位。
+    </div>
+    <div class="toolbar">
+      <input id="q" placeholder="搜索路径 / controller / 模块..." />
+      <select id="scope"><option value="">全部模块</option></select>
+      <select id="method"><option value="">全部方法</option><option>GET</option><option>POST</option><option>PUT</option><option>PATCH</option><option>DELETE</option><option>ANY</option></select>
+      <select id="sampleStatus"><option value="">全部采样状态</option><option value="200">成功（HTTP 2xx）</option><option value="4xx">客户端错误（HTTP 4xx）</option><option value="5xx">服务端错误（HTTP 5xx）</option><option value="skipped">已跳过</option><option value="none">未采样</option></select>
+    </div>
+    <div class="stats" id="stats"></div>
+  </header>
+  <main id="app"></main>
+  <script src="./app.js"></script>
+</body>
+</html>

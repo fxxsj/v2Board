@@ -1,0 +1,42 @@
+{
+  "path": "/api/v1/passport/auth/getQuickLoginUrl",
+  "method": "POST",
+  "auth": "guest",
+  "description": "登录（passport）",
+  "params": [
+    {
+      "name": "auth_data",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "redirect",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  },
+  "sample": {
+    "status": 403,
+    "body": "{\n    \"message\": \"未登录或登陆已过期\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\HttpException\",\n    \"file\": \"vendor/laravel/framework/src/Illuminate/Foundation/Application.php\",\n    \"line\": 1134,\n    \"trace\": [\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Foundation/helpers.php\",\n            \"line\": 44,\n            \"function\": \"abort\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"app/Http/Controllers/V1/Passport/AuthController.php\",\n            \"line\": 269,\n            \"function\": \"abort\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Routing/Controller.php\",\n            \"line\": 54,\n            \"function\": \"getQuickLoginUrl\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\V1\\\\Passport\\\\AuthController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php\",\n            \"line\": 45,\n            \"function\": \"callAction\",\n            \"class\": \"Illuminate\\\\Routing\\\\Controller\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Routing/Route.php\",\n            \"line\": 261,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Routing/Route.php\",\n            \"line\": 205,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 721,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"{closure:Illuminate\\\\Routing\\\\Router::runRouteWithinStack():719}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"{closure:Illuminate\\\\Pipeline\\\\Pipeline::prepareDestination():126}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"app/Http/Middleware/Language.php\",\n            \"line\": 15,\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():142}:143}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"App\\\\Http\\\\Middleware\\\\Language\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"app/Http/Middleware/ForceJson.php\",\n            \"line\": 20,\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():142}:143}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n    \n...TRUNCATED..."
+  }
+}

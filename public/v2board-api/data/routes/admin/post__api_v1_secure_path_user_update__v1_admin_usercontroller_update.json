@@ -1,0 +1,196 @@
+{
+  "path": "/api/v1/{secure_path}/user/update",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "更新（user）",
+  "params": [
+    {
+      "name": "auto_renewal",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "frontend_api_layer",
+        "frontend_confirmed_payload"
+      ],
+      "source": "frontend_api_layer+frontend_payload"
+    },
+    {
+      "name": "remind_expire",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "frontend_api_layer",
+        "frontend_confirmed_payload"
+      ],
+      "source": "frontend_api_layer+frontend_payload"
+    },
+    {
+      "name": "remind_traffic",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "frontend_api_layer",
+        "frontend_confirmed_payload"
+      ],
+      "source": "frontend_api_layer+frontend_payload"
+    },
+    {
+      "name": "email",
+      "type": "email",
+      "required": true,
+      "rules": [
+        "required",
+        "email:strict"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "password",
+      "type": "string",
+      "required": false,
+      "rules": [
+        "nullable"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "transfer_enable",
+      "type": "number",
+      "required": false,
+      "rules": [
+        "numeric"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "device_limit",
+      "type": "integer",
+      "required": false,
+      "rules": [
+        "nullable",
+        "integer"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "expired_at",
+      "type": "integer",
+      "required": false,
+      "rules": [
+        "nullable",
+        "integer"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "banned",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required",
+        "in:0"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "plan_id",
+      "type": "integer",
+      "required": false,
+      "rules": [
+        "nullable",
+        "integer"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "commission_rate",
+      "type": "integer",
+      "required": false,
+      "rules": [
+        "nullable",
+        "integer",
+        "min:0",
+        "max:100"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "discount",
+      "type": "integer",
+      "required": false,
+      "rules": [
+        "nullable",
+        "integer",
+        "min:0",
+        "max:100"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "u",
+      "type": "integer",
+      "required": false,
+      "rules": [
+        "integer"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "d",
+      "type": "integer",
+      "required": false,
+      "rules": [
+        "integer"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "balance",
+      "type": "integer",
+      "required": false,
+      "rules": [
+        "integer"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "commission_balance",
+      "type": "integer",
+      "required": false,
+      "rules": [
+        "integer"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "id",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "invite_user_email",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "path": "/api/v1/{secure_path}/stat/getOverride",
+  "method": "GET",
+  "auth": "admin(auth_data)",
+  "description": "获取数据（stat）",
+  "params": [],
+  "response": {
+    "type": "return [..]",
+    "keys": [
+      "commission_last_month_payout",
+      "commission_month_payout",
+      "commission_pending_total",
+      "data",
+      "day_income",
+      "day_register_total",
+      "last_month_income",
+      "month_income",
+      "month_register_total",
+      "online_user",
+      "ticket_pending_total"
+    ],
+    "fields": [
+      {
+        "field": "commission_last_month_payout",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "commission_month_payout",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "commission_pending_total",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      },
+      {
+        "field": "day_income",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "day_register_total",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "last_month_income",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "month_income",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "month_register_total",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "online_user",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "ticket_pending_total",
+        "desc": "字段含义需结合具体业务对象确认"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": {\n        \"online_user\": 0,\n        \"month_income\": 0,\n        \"month_register_total\": 6,\n        \"day_register_total\": 4,\n        \"ticket_pending_total\": 0,\n        \"commission_pending_total\": 0,\n        \"day_income\": 0,\n        \"last_month_income\": 0,\n        \"commission_month_payout\": 0,\n        \"commission_last_month_payout\": 0\n    }\n}"
+  }
+}

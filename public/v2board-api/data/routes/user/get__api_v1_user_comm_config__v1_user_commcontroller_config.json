@@ -1,0 +1,78 @@
+{
+  "path": "/api/v1/user/comm/config",
+  "method": "GET",
+  "auth": "user(auth_data)",
+  "description": "获取配置（user）",
+  "params": [],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "commission_distribution_enable",
+      "commission_distribution_l1",
+      "commission_distribution_l2",
+      "commission_distribution_l3",
+      "currency",
+      "currency_symbol",
+      "data",
+      "is_telegram",
+      "stripe_pk",
+      "telegram_discuss_link",
+      "withdraw_close",
+      "withdraw_methods"
+    ],
+    "fields": [
+      {
+        "field": "commission_distribution_enable",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "commission_distribution_l1",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "commission_distribution_l2",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "commission_distribution_l3",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "currency",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "currency_symbol",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      },
+      {
+        "field": "is_telegram",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "stripe_pk",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "telegram_discuss_link",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "withdraw_close",
+        "desc": "字段含义需结合具体业务对象确认"
+      },
+      {
+        "field": "withdraw_methods",
+        "desc": "字段含义需结合具体业务对象确认"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": {\n        \"is_telegram\": 0,\n        \"telegram_discuss_link\": null,\n        \"stripe_pk\": null,\n        \"withdraw_methods\": [\n            \"支付宝\",\n            \"USDT\",\n            \"Paypal\"\n        ],\n        \"withdraw_close\": 0,\n        \"currency\": \"CNY\",\n        \"currency_symbol\": \"¥\",\n        \"commission_distribution_enable\": 0,\n        \"commission_distribution_l1\": null,\n        \"commission_distribution_l2\": null,\n        \"commission_distribution_l3\": null\n    }\n}"
+  }
+}

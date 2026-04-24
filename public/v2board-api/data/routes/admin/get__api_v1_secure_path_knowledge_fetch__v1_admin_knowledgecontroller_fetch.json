@@ -1,0 +1,33 @@
+{
+  "path": "/api/v1/{secure_path}/knowledge/fetch",
+  "method": "GET",
+  "auth": "admin(auth_data)",
+  "description": "获取列表/数据（knowledge）",
+  "params": [
+    {
+      "name": "id",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": []\n}"
+  }
+}

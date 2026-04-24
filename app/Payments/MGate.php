@@ -91,8 +91,7 @@ class MGate {
         ksort($params);
         reset($params);
         $str = http_build_query($params) . $this->config['mgate_app_secret'];
-        $generateSignature = md5($str);
-        if (!hash_equals($generateSignature, $sign)) {
+        if ($sign !== md5($str)) {
             return false;
         }
         return [

@@ -1,0 +1,51 @@
+{
+  "path": "/api/v1/user/ticket/save",
+  "method": "POST",
+  "auth": "user(auth_data)",
+  "description": "保存（user）",
+  "params": [
+    {
+      "name": "subject",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required",
+        "frontend_confirmed_payload"
+      ],
+      "source": "frontend_api_layer+FormRequest"
+    },
+    {
+      "name": "message",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required",
+        "frontend_confirmed_payload"
+      ],
+      "source": "frontend_api_layer+FormRequest"
+    },
+    {
+      "name": "level",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required",
+        "in:0",
+        "frontend_confirmed_payload"
+      ],
+      "source": "frontend_api_layer+FormRequest"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

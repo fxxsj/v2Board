@@ -1,0 +1,7 @@
+{
+  "path": "/api/v1/staff/notice/update",
+  "method": "POST",
+  "auth": "staff(auth_data)",
+  "description": "更新（staff）",
+  "params": []
+}

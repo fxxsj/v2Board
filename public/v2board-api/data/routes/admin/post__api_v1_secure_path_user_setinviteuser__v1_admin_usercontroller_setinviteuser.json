@@ -1,0 +1,7 @@
+{
+  "path": "/api/v1/{secure_path}/user/setInviteUser",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "user 模块接口",
+  "params": []
+}

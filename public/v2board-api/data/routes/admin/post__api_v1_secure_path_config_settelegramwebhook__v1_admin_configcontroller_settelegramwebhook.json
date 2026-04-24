@@ -1,0 +1,29 @@
+{
+  "path": "/api/v1/{secure_path}/config/setTelegramWebhook",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "获取配置（config）",
+  "params": [
+    {
+      "name": "telegram_bot_token",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

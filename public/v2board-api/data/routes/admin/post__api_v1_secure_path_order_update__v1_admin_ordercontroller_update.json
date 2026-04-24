@@ -1,0 +1,47 @@
+{
+  "path": "/api/v1/{secure_path}/order/update",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "更新（order）",
+  "params": [
+    {
+      "name": "status",
+      "type": "string",
+      "required": false,
+      "rules": [
+        "in:0"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "commission_status",
+      "type": "string",
+      "required": false,
+      "rules": [
+        "in:0"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "trade_no",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

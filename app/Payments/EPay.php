@@ -58,17 +58,9 @@ class EPay {
         ksort($params);
         reset($params);
         $str = stripslashes(urldecode(http_build_query($params))) . $this->config['key'];
-        $generateSignature = md5($str);
-        if (!hash_equals($generateSignature, $sign)) {
+        if ($sign !== md5($str)) {
             return false;
         }
-
-        // 强制要求交易状态为成功，避免未支付/处理中状态被误入账
-        $tradeStatus = $params['trade_status'] ?? '';
-        if ($tradeStatus !== 'TRADE_SUCCESS') {
-            return('fail');
-        }
-
         return [
             'trade_no' => $params['out_trade_no'],
             'callback_no' => $params['trade_no']

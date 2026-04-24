@@ -1,0 +1,11 @@
+{
+  "path": "/api/v1/{secure_path}/system/getQueueMasters",
+  "method": "GET",
+  "auth": "admin(auth_data)",
+  "description": "获取数据（system）",
+  "params": [],
+  "sample": {
+    "status": 200,
+    "body": "[]"
+  }
+}

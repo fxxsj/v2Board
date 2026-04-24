@@ -1,0 +1,23 @@
+{
+  "path": "/api/v1/user/info",
+  "method": "GET",
+  "auth": "user(auth_data)",
+  "description": "获取信息（user）",
+  "params": [],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": {\n        \"email\": \"doc_user@local.test\",\n        \"transfer_enable\": 0,\n        \"device_limit\": null,\n        \"last_login_at\": 1774176417,\n        \"created_at\": 1774176417,\n        \"banned\": 0,\n        \"auto_renewal\": 0,\n        \"remind_expire\": 1,\n        \"remind_traffic\": 1,\n        \"expired_at\": 0,\n        \"balance\": 0,\n        \"commission_balance\": 0,\n        \"plan_id\": null,\n        \"discount\": null,\n        \"commission_rate\": null,\n        \"telegram_id\": null,\n        \"uuid\": \"025937ae-42c2-43ab-b3c0-a88cda452d65\",\n        \"avatar_url\": \"https://cravatar.cn/avatar/94dcaf82eaf0e2d2228985904e9fd3e1?s=64&d=identicon\"\n    }\n}"
+  }
+}

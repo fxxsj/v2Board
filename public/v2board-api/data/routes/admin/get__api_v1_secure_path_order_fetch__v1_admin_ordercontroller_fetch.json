@@ -1,0 +1,85 @@
+{
+  "path": "/api/v1/{secure_path}/order/fetch",
+  "method": "GET",
+  "auth": "admin(auth_data)",
+  "description": "获取列表/数据（order）",
+  "params": [
+    {
+      "name": "filter.*.key",
+      "type": "email",
+      "required": true,
+      "rules": [
+        "required",
+        "in:email"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "filter.*.condition",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required",
+        "in:>"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "filter.*.value",
+      "type": "string",
+      "required": false,
+      "rules": [
+        ""
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "current",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "pageSize",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "is_commission",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data",
+      "total"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      },
+      {
+        "field": "total",
+        "desc": "总数"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": [],\n    \"total\": 0\n}"
+  }
+}

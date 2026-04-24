@@ -1,0 +1,43 @@
+{
+  "path": "/api/v1/user/ticket/fetch",
+  "method": "GET",
+  "auth": "user(auth_data)",
+  "description": "获取列表/数据（user）",
+  "params": [
+    {
+      "name": "ticketId",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "frontend_api_layer",
+        "frontend_confirmed_query"
+      ],
+      "source": "frontend_api_layer+frontend_query"
+    },
+    {
+      "name": "id",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": []\n}"
+  }
+}

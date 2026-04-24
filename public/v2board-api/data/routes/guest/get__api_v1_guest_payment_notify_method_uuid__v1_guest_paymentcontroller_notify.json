@@ -1,0 +1,28 @@
+{
+  "path": "/api/v1/guest/payment/notify/{method}/{uuid}",
+  "auth": "guest",
+  "description": "支付回调通知（guest）",
+  "params": [
+    {
+      "name": "method",
+      "type": "string",
+      "required": true,
+      "desc": "支付方式（路由参数）"
+    },
+    {
+      "name": "uuid",
+      "type": "string",
+      "required": true,
+      "desc": "支付配置 UUID（路由参数）"
+    }
+  ],
+  "response": {
+    "type": "text/plain",
+    "keys": [],
+    "fields": []
+  },
+  "notes": [
+    "用于支付平台回调通知；可能写入订单、触发发放/通知等副作用，文档不自动采样。"
+  ],
+  "method": "GET"
+}

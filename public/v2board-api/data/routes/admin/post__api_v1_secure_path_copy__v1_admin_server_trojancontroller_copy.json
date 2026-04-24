@@ -1,0 +1,29 @@
+{
+  "path": "/api/v1/{secure_path}/server/trojan/copy",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "copy 模块接口",
+  "params": [
+    {
+      "name": "id",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "path": "/api/v1/{secure_path}/config/save",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "获取配置（config）",
+  "params": [
+    {
+      "name": "app_url.url",
+      "type": "string",
+      "required": false,
+      "rules": [
+        "站点URL格式不正确，必须携带http(s)://"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "subscribe_url.url",
+      "type": "string",
+      "required": false,
+      "rules": [
+        "订阅URL格式不正确，必须携带http(s)://"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "subscribe_path.regex",
+      "type": "string",
+      "required": false,
+      "rules": [
+        "订阅路径必须以/开头"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "server_token.min",
+      "type": "string",
+      "required": false,
+      "rules": [
+        "通讯密钥长度必须大于16位"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "tos_url.url",
+      "type": "string",
+      "required": false,
+      "rules": [
+        "服务条款URL格式不正确，必须携带http(s)://"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "telegram_discuss_link.url",
+      "type": "string",
+      "required": false,
+      "rules": [
+        "Telegram群组地址必须为URL格式，必须携带http(s)://"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "logo.url",
+      "type": "string",
+      "required": false,
+      "rules": [
+        "LOGO URL格式不正确，必须携带https(s)://"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "secure_path.min",
+      "type": "string",
+      "required": false,
+      "rules": [
+        "后台路径长度最小为8位"
+      ],
+      "source": "FormRequest"
+    },
+    {
+      "name": "secure_path.regex",
+      "type": "string",
+      "required": false,
+      "rules": [
+        "后台路径只能为字母或数字"
+      ],
+      "source": "FormRequest"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

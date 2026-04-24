@@ -1,0 +1,38 @@
+{
+  "path": "/api/v1/{secure_path}/ticket/reply",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "回复（ticket）",
+  "params": [
+    {
+      "name": "id",
+      "type": "unknown",
+      "required": true,
+      "rules": [
+        "required? dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "message",
+      "type": "unknown",
+      "required": true,
+      "rules": [
+        "required? dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

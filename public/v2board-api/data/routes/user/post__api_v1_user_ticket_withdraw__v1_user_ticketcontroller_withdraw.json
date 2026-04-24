@@ -1,0 +1,50 @@
+{
+  "path": "/api/v1/user/ticket/withdraw",
+  "method": "POST",
+  "auth": "user(auth_data)",
+  "description": "user 模块接口",
+  "params": [
+    {
+      "name": "withdraw_method",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required",
+        "frontend_confirmed_payload"
+      ],
+      "source": "frontend_api_layer+FormRequest"
+    },
+    {
+      "name": "withdraw_account",
+      "type": "string",
+      "required": true,
+      "rules": [
+        "required",
+        "frontend_confirmed_payload"
+      ],
+      "source": "frontend_api_layer+FormRequest"
+    },
+    {
+      "name": "withdraw_amount",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "frontend_api_layer",
+        "frontend_confirmed_payload"
+      ],
+      "source": "frontend_api_layer+frontend_payload"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}

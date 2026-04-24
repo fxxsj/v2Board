@@ -1,0 +1,24 @@
+{
+  "path": "/api/v1/{secure_path}/config/testSendMail",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "获取配置（config）",
+  "params": [],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data",
+      "log"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      },
+      {
+        "field": "log",
+        "desc": "字段含义需结合具体业务对象确认"
+      }
+    ]
+  }
+}

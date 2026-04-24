@@ -1,0 +1,23 @@
+{
+  "path": "/api/v1/user/checkLogin",
+  "method": "GET",
+  "auth": "user(auth_data)",
+  "description": "登录（user）",
+  "params": [],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": {\n        \"is_login\": true\n    }\n}"
+  }
+}

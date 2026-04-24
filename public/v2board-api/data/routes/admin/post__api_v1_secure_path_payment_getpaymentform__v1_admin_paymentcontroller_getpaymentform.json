@@ -1,0 +1,42 @@
+{
+  "path": "/api/v1/{secure_path}/payment/getPaymentForm",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "获取数据（payment）",
+  "params": [
+    {
+      "name": "payment",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    },
+    {
+      "name": "id",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  },
+  "sample": {
+    "status": 500,
+    "body": "{\n    \"message\": \"gate is not found\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\HttpException\",\n    \"file\": \"vendor/laravel/framework/src/Illuminate/Foundation/Application.php\",\n    \"line\": 1134,\n    \"trace\": [\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Foundation/helpers.php\",\n            \"line\": 44,\n            \"function\": \"abort\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"app/Services/PaymentService.php\",\n            \"line\": 19,\n            \"function\": \"abort\"\n        },\n        {\n            \"file\": \"app/Http/Controllers/V1/Admin/PaymentController.php\",\n            \"line\": 44,\n            \"function\": \"__construct\",\n            \"class\": \"App\\\\Services\\\\PaymentService\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Routing/Controller.php\",\n            \"line\": 54,\n            \"function\": \"getPaymentForm\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\V1\\\\Admin\\\\PaymentController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php\",\n            \"line\": 45,\n            \"function\": \"callAction\",\n            \"class\": \"Illuminate\\\\Routing\\\\Controller\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Routing/Route.php\",\n            \"line\": 261,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Routing/Route.php\",\n            \"line\": 205,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 721,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"{closure:Illuminate\\\\Routing\\\\Router::runRouteWithinStack():719}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"app/Http/Middleware/RequestLog.php\",\n            \"line\": 22,\n            \"function\": \"{closure:Illuminate\\\\Pipeline\\\\Pipeline::prepareDestination():126}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"App\\\\Http\\\\Middleware\\\\RequestLog\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"app/Http/Middleware/Admin.php\",\n            \"line\": 27,\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():142}:143}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"App\\\\Http\\\\Middleware\\\\Admin\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBinding\n...TRUNCATED..."
+  }
+}

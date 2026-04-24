@@ -1,0 +1,23 @@
+{
+  "path": "/api/v1/user/getActiveSession",
+  "method": "GET",
+  "auth": "user(auth_data)",
+  "description": "获取数据（user）",
+  "params": [],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  },
+  "sample": {
+    "status": 200,
+    "body": "{\n    \"data\": {\n        \"a9292bcc490e5e355949c93821541c30\": {\n            \"ip\": \"127.0.0.1\",\n            \"login_at\": 1774177209,\n            \"ua\": \"Symfony\",\n            \"auth_data\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwic2Vzc2lvbiI6ImE5MjkyYmNjNDkwZTVlMzU1OTQ5YzkzODIxNTQxYzMwIn0.ZMvD5KMSjeXwgS6d_Wv9u41gLRaXbm8uM7WNIuM_eyY\"\n        },\n        \"31e79c1991c54df8786aa90bfc884f64\": {\n            \"ip\": \"127.0.0.1\",\n            \"login_at\": 1774177276,\n            \"ua\": \"Symfony\",\n            \"auth_data\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwic2Vzc2lvbiI6IjMxZTc5YzE5OTFjNTRkZjg3ODZhYTkwYmZjODg0ZjY0In0.KIGgaGFwjuIEDM__rBt4dvCb78fKKn-IhqMTsD6Sjyk\"\n        },\n        \"74f2e21d9ed4dafb927129691b3f4766\": {\n            \"ip\": \"127.0.0.1\",\n            \"login_at\": 1774177287,\n            \"ua\": \"Symfony\",\n            \"auth_data\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwic2Vzc2lvbiI6Ijc0ZjJlMjFkOWVkNGRhZmI5MjcxMjk2OTFiM2Y0NzY2In0._19MIZOAq94k9kh82wht7uQOFX0qWyEDKJn-qyg1h6s\"\n        },\n        \"2ffb9dd62cf347f576a487deaab45c44\": {\n            \"ip\": \"127.0.0.1\",\n            \"login_at\": 1774177288,\n            \"ua\": \"Symfony\",\n            \"auth_data\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwic2Vzc2lvbiI6IjJmZmI5ZGQ2MmNmMzQ3ZjU3NmE0ODdkZWFhYjQ1YzQ0In0.3KSETw6AjwSrg7A5ofkaLvBZmolkTDuXcWxf25CWQ4M\"\n        },\n        \"172ada32ea3b93a74827edbda3c55c3b\": {\n            \"ip\": \"127.0.0.1\",\n            \"login_at\": 1774177347,\n            \"ua\": \"Symfony\",\n            \"auth_data\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwic2Vzc2lvbiI6IjE3MmFkYTMyZWEzYjkzYTc0ODI3ZWRiZGEzYzU1YzNiIn0.tGe-f-vg-hR9ZmowZUnkd63Tpj_vdJpKlZxrzNKQU6w\"\n        },\n        \"1240dbd967235e4f5fea17be92055c88\": {\n            \"ip\": \"127.0.0.1\",\n            \"login_at\": 1774177348,\n            \"ua\": \"Symfony\",\n            \"auth_data\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwic2Vzc2lvbiI6IjEyNDBkYmQ5NjcyMzVlNGY1ZmVhMTdiZTkyMDU1Yzg4In0.n14ZTmxZnIw4w4VqIoR9M45NGI89_9nfek39I0ujYTg\"\n        },\n        \"e52e52763e3cf5c4637925f5e012ca7d\": {\n            \"ip\": \"127.0.0.1\",\n            \"login_at\": 1774177474,\n            \"ua\": \"Symfony\",\n            \"auth_data\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwic2Vzc2lvbiI6ImU1MmU1Mjc2M2UzY2Y1YzQ2Mzc5MjVmNWUwMTJjYTdkIn0.sRXB7KcNFNZCCQHSbKouUQ8J2DpeDmWmi38h-8M7lfA\"\n        },\n        \"14491a487e7eb3286723361c2f485665\": {\n            \"ip\": \"127.0.0.1\",\n            \"login_at\": 1774177474,\n            \"ua\": \"Symfony\",\n            \"auth_data\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwic2Vzc2lvbiI6IjE0NDkxYTQ4N2U3ZWIzMjg2NzIzMzYxYzJmNDg1NjY1In0.geCqYkvwHxAgZHIhjOKkfH9NaMphugp7n-1uHoLMQq4\"\n        }\n    }\n}"
+  }
+}

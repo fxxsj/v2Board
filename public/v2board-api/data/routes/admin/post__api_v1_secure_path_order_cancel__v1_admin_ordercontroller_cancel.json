@@ -1,0 +1,29 @@
+{
+  "path": "/api/v1/{secure_path}/order/cancel",
+  "method": "POST",
+  "auth": "admin(auth_data)",
+  "description": "取消（order）",
+  "params": [
+    {
+      "name": "trade_no",
+      "type": "unknown",
+      "required": false,
+      "rules": [
+        "dynamic"
+      ],
+      "source": "request->input()"
+    }
+  ],
+  "response": {
+    "type": "response([..])",
+    "keys": [
+      "data"
+    ],
+    "fields": [
+      {
+        "field": "data",
+        "desc": "主返回数据体"
+      }
+    ]
+  }
+}
